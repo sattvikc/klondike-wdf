@@ -1,0 +1,23 @@
+basic:
+    url: http://localhost/klondike-wdf/
+    path: /opt/lampp/htdocs/klondike-wdf/
+    title: Klondike
+    tagline: Website Development Framework
+    urltype: noht
+    
+theme:
+    name: white
+    logo: ''
+    
+database:
+    db: mysql
+    name: klondike
+    host: localhost
+    user: root
+    pass: ''
+    
+libraries:
+    -theme
+    -mysqldb
+    -cache
+    -file
