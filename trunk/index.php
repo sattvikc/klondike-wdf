@@ -6,14 +6,24 @@
     session_start();
 
     //Define klondike version
-    define('KLONDIKE_VER', 0.1);
+    define('KLONDIKE_VER', 1.0);
     
     //Shorthand Directory separator
     define('DS', DIRECTORY_SEPARATOR);
     
     //Include YAML parser and load main settings using YAML parser.
     require_once('sys/parsers/yaml.php');
+
+    global $_SETTINGS;
     $_SETTINGS = Spyc::YAMLLoad('etc/main.yaml');
+    
+    //Load the loaders
+    require_once('sys/loaders/theme.php');
+    require_once('sys/loaders/region.php');
+    require_once('sys/loaders/app.php');
+    
+    //Load the managers
+    require_once('sys/managers/url.php');
     
     //More shorthands, for coder's comfort.. :)
     define('WURL', $_SETTINGS['basic']['url']);
@@ -39,7 +49,8 @@
     $time_end = microtime(true);
     $time = $time_end - $time_start;
     // print time taken for checking performance
-    echo "<pre>Page took $time seconds\n</pre>"; //*/    
+    echo "<center><pre>Page took $time seconds\n</pre></center>"; //*/    
+
 ?>
     </body>
 </html>
