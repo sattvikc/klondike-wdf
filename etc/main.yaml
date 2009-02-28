@@ -1,7 +1,9 @@
 basic:
-    url: http://localhost/klondike-wdf/
-    path: /opt/lampp/htdocs/klondike-wdf/
-    title: Klondike
+    url: http://localhost:8080/klondike-wdf/
+    path: c:\wamp\www\klondike-wdf\
+    title: 
+        -Klondike
+        -WDF
     tagline: Website Development Framework
     urltype: noht
     
@@ -17,7 +19,6 @@ database:
     pass: ''
     
 libraries:
-    -theme
     -mysqldb
     -cache
     -file
