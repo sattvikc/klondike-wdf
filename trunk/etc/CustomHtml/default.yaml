@@ -1,0 +1,16 @@
+info:
+    path: /bin/CustomHtml
+    version: 1.0
+    Developer: Sattvik Chakravarthy
+    Contributors: ''
+
+parameters:
+    title:
+        type: string
+        maxLength: 50
+    text:
+        type: string
+
+default:
+    title: CustomHtml
+    text: Edit this text

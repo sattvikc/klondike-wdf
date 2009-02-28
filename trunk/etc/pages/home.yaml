@@ -1,0 +1,18 @@
+title: Home
+
+inherit:
+    start:
+        -'_all_start.yaml'
+    end:
+        -'_all_end.yaml'
+
+regions:
+    content:
+        CustomHtml1:
+            app: CustomHtml
+            view: default
+            controller: default
+            parameters:
+                title: 'What is Klondike?'
+                text: Klondike is a Usable System along with a development framework.
+
