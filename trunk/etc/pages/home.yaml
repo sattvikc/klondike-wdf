@@ -15,4 +15,6 @@ regions:
             parameters:
                 title: 'What is Klondike?'
                 text: Klondike is a Usable System along with a development framework.
-
+            subregions:
+                title: title
+                text: text

@@ -1,0 +1,13 @@
+info:
+    path: /bin/CustomHtml
+    version: 1.0
+    Developer: Sattvik Chakravarthy
+    Contributors: ''
+
+parameters:
+    menu:
+        type: string
+        maxLength: 50
+
+default:
+    menu: mainmenu

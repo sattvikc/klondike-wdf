@@ -3,3 +3,16 @@ inherit:
         -'none'
     end:
         -'none'
+
+regions:
+    menu:
+        Menu1:
+            app: Menu
+            view: list
+            controller: default
+            parameters:
+                menu: mainmenu
+            
+            subregions:
+                url: url
+                text: text

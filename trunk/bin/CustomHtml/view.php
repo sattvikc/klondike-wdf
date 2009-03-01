@@ -1,19 +1,11 @@
 <?php
 
-    function CustomHtml_default_view($title, $text) {
-        
-        $result = '';
-        $result .=  "<?xml version=\"1.0\" ?>\n";
-        $result .=  "<contents>\n";
-        $result .=  "<content>\n";
-        $result .=  "<title>" . $title ."</title>\n";
-        $result .=  "<text><![CDATA[\n";
-        $result .=  $text . "\n";
-        $result .=  "]]</text>\n";
-        $result .=  "</content>\n";
-        $result .=  "</contents>\n";
-        
-        return $result;
+    function CustomHtml_default_view($params, $subregions) {
+        global $_CUR_REGION, $_SETTINGS;
+        $content = array();
+        $content[ $subregions['title'] ] = $params['title'];
+        $content[ $subregions['text'] ] = $params['text'];
+        include WPATH . 'share' . DS . 'themes' . DS . $_SETTINGS['theme']['name'] . DS . $_CUR_REGION . '.php';
     }
     
 ?>
