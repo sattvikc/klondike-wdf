@@ -5,7 +5,9 @@
                     <span style="font-size: 1em; font-style: italic; color: #222;"><b>WebDev Simplified...</b></span>
                 </div>
                 <div id="nav">
+                    <ul>
 <?php region_theme_load('menu'); ?>
+                    </ul>
                 </div>
             </div>
             <table cellspacing="0" cellpadding="0" id="main"><tr>

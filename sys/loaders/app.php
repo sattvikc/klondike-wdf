@@ -9,7 +9,7 @@
             require_once(WPATH . "bin" . DS . $app['app'] . DS . 'view.php');
         }
         
-        $content = call_user_func_array($funcName, $app['parameters']);
+        call_user_func_array($funcName, array($app['parameters'], $app['subregions']));
     }
     
 ?>
