@@ -15,7 +15,7 @@
     require_once('sys/parsers/yaml.php');
 
     global $_SETTINGS;
-    $_SETTINGS = yaml_load('etc/main.yaml');
+    $_SETTINGS = Spyc::YAMLLoad('etc/main.yaml');
     
     //Load the loaders
     require_once('sys/loaders/theme.php');
