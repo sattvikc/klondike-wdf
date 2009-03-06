@@ -15,7 +15,7 @@
     require_once('sys/parsers/yaml.php');
 
     global $_SETTINGS;
-    $_SETTINGS = Spyc::YAMLLoad('etc/main.yaml');
+    $_SETTINGS = yaml_load('etc/main.yaml');
     
     //Load the loaders
     require_once('sys/loaders/theme.php');
@@ -36,6 +36,8 @@
     
     //Set default PATH_INFO
     if(!isset($_SERVER['PATH_INFO'])) $_SERVER['PATH_INFO'] = '/home';
+    global $URL_PATH;
+    $URL_PATH = split('/', $_SERVER['PATH_INFO']);
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -50,7 +52,6 @@
     $time = $time_end - $time_start;
     // print time taken for checking performance
     echo "<center><pre>Page took $time seconds\n</pre></center>"; //*/    
-
 ?>
     </body>
 </html>
