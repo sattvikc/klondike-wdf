@@ -8,7 +8,7 @@ basic:
     urltype: noht
     
 theme:
-    name: white
+    name: colours
     logo: ''
     
 database:

@@ -71,6 +71,11 @@ p {
     background-color: #333;
 }
 
+#nav ul li.active a{
+    color: #fff;
+    background-color: #333;
+}
+
 /* main content */
 #main {
     width: 100%;
