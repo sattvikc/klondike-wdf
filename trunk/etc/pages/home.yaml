@@ -18,3 +18,14 @@ regions:
             subregions:
                 title: title
                 text: text
+        CustomHtml2:
+            app: CustomHtml
+            view: default
+            controller: default
+            parameters:
+                title: 'Another app'
+                text: 'This is how u can create another app!!!'
+            subregions:
+                title: title
+                text: text
+
