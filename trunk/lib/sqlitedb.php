@@ -1,16 +1,52 @@
 <?php
 	   function sqlitedb_fetch_all($query) {
 		global $_SETTINGS;
-		$res = array();
+		$result = array();
 		$db = sqlite_open('$_SETTINGS['database']['path']');
-		if($res=sqlite_query($db,$query)) {
+		 if($res=sqlite_query($db,$query)) {
 			while($r = sqlite_fetch_array($res)) {
-			array_push($res,$r);
+			array_push($result,$r);
 			}
 			sqlite_close($db);
-			return $res;
-		}
+			return $result;
+		 }
+       }
 ?>
 		
 		
 		
+<?php
+		function sqlitedb_insert($query) {
+		global $_SETTINGS;
+		$res = array();
+		$db = sqlite_open('$_SETTINGS['database']['path']');
+		    if($res=sqlite_query($db,$query)) {
+			  return sqlite_changes($db);
+	    	}
+		sqlite_close($db);
+		}
+?>
+
+<?php
+		function sqlitedb_delete($query) {
+		global $_SETTINGS;
+		$res = array();
+		$db = sqlite_open('$_SETTINGS['database']['path']');
+		    if($res=sqlite_query($db,$query)) {
+			  return sqlite_changes($db);
+	    	}
+		sqlite_close($db);
+		}
+?>
+
+<?php
+		function sqlitedb_update($query) {
+		global $_SETTINGS;
+		$res = array();
+		$db = sqlite_open('$_SETTINGS['database']['path']');
+		    if($res=sqlite_query($db,$query)) {
+			  return sqlite_changes($db);
+	    	}
+		sqlite_close($db);
+		}
+?>
