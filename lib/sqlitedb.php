@@ -10,43 +10,18 @@
 			sqlite_close($db);
 			return $result;
 		 }
-       }
-?>
-		
-		
-		
-<?php
-		function sqlitedb_insert($query) {
-		global $_SETTINGS;
-		$res = array();
-		$db = sqlite_open('$_SETTINGS['database']['path']');
-		    if($res=sqlite_query($db,$query)) {
-			  return sqlite_changes($db);
-	    	}
-		sqlite_close($db);
-		}
-?>
+           }
 
-<?php
-		function sqlitedb_delete($query) {
-		global $_SETTINGS;
-		$res = array();
-		$db = sqlite_open('$_SETTINGS['database']['path']');
-		    if($res=sqlite_query($db,$query)) {
+		
+		
+		
+		function sqlitedb_update_all($query) {
+		   global $_SETTINGS;
+		   $res = array();
+		   $db = sqlite_open('$_SETTINGS['database']['path']');
+		     if($res=sqlite_query($db,$query)) {
 			  return sqlite_changes($db);
-	    	}
-		sqlite_close($db);
-		}
-?>
-
-<?php
-		function sqlitedb_update($query) {
-		global $_SETTINGS;
-		$res = array();
-		$db = sqlite_open('$_SETTINGS['database']['path']');
-		    if($res=sqlite_query($db,$query)) {
-			  return sqlite_changes($db);
-	    	}
+	    	     }
 		sqlite_close($db);
 		}
 ?>
