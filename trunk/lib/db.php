@@ -16,4 +16,15 @@
 	    }
 	}
 	
+	function db_update_all($query) {
+		global $_SETTINGS;
+		if($_SETTINGS['database']['name']=="mysql")	{
+			mysqldb_update_all($query)
+		}
+		else if($_SETTINGS['database']['name']=="sqlite")	{
+			sqlitedb_update_all($query);
+		}
+		
+			
+
 ?>
