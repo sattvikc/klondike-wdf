@@ -14,7 +14,7 @@
         return $result;
     }
 
-    function mysqldb_insert($query) {
+    function mysqldb_update_all($query) {
         global $_SETTINGS;
         $db = mysql_connect($_SETTINGS['database']['host'], $_SETTINGS['database']['user'], $_SETTINGS['database']['pass']) or die ('Cannot connect to MySQL!');
         mysql_select_db( $_SETTINGS['database']['name'] ) or die ("Cannot select database!");
