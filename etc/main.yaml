@@ -8,7 +8,7 @@ basic:
     urltype: noht
     
 theme:
-    name: colours
+    name: white
     logo: ''
     
 database:
@@ -17,6 +17,7 @@ database:
     host: localhost
     user: root
     pass: ''
+    prefix: 'kd_'
     
 libraries:
     -mysqldb

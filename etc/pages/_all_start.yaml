@@ -9,7 +9,7 @@ regions:
         Menu1:
             app: Menu
             view: list
-            controller: default
+            controller: none
             parameters:
                 menu: mainmenu
             
