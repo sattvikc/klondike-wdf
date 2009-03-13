@@ -1,4 +1,4 @@
 <div class="right_post">
-    <h1><?php echo $content['title']; ?></h1>
+    <h3><?php echo $content['title']; ?></h3>
     <?php echo $content['text']; ?>
 </div>

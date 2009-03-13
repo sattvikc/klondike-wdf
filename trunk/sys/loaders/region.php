@@ -1,16 +1,17 @@
 <?php
     
-    //This function shall be called from a theme
+    //This function will be called from a theme
     function region_theme_load($regionName) {
         $pageYaml = WPATH . "etc" . DS . "pages" . DS . url_get_page_yaml();
         
         region_load($pageYaml, $regionName);
     }
     
+    //This function will be recursively called for inherited pages
     function region_load($pageYaml, $regionName) {
         global $_CUR_REGION;
         $_CUR_REGION = $regionName;
-        $page = Spyc::YAMLLoad($pageYaml);
+        $page = yaml_load($pageYaml);
         foreach($page['inherit']['start'] as $pgYaml) {
             if($pgYaml != 'none')  { 
                 $pgYaml = WPATH . "etc" . DS . "pages" . DS . $pgYaml;

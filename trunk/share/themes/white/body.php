@@ -2,7 +2,7 @@
             <div id="header">
                 <div id="logo">
                     <span style="font-size: 2.2em; color: #110;"><?php echo $_SETTINGS['basic']['title'][0]; ?></span>-<span style="font-size: 1.6em; color:#000;"><?php echo $_SETTINGS['basic']['title'][1]; ?></span><br />
-                    <span style="font-size: 1em; font-style: italic; color: #222;"><b>WebDev Simplified...</b></span>
+                    <span style="font-size: 1em; font-style: italic; color: #222;"><b><?php echo $_SETTINGS['basic']['tagline'] ?></b></span>
                 </div>
                 <div id="nav">
                     <ul>
@@ -18,7 +18,9 @@
 <?php region_theme_load("content"); ?>
                 </td>
                 <td id="col3" class="col">
+                    <div class="right_wrap">
 <?php region_theme_load("right"); ?>
+                    </div>
                 </td>
             </tr></table>
         </div>

@@ -12,10 +12,10 @@
     define('DS', DIRECTORY_SEPARATOR);
     
     //Include YAML parser and load main settings using YAML parser.
-    require_once('sys/parsers/yaml.php');
+    require_once('sys' . DS . 'parsers' . DS . 'yaml.php');
 
     global $_SETTINGS;
-    $_SETTINGS = Spyc::YAMLLoad('etc/main.yaml');
+    $_SETTINGS = yaml_load('etc/main.yaml');
     
     //Load the loaders
     require_once('sys/loaders/theme.php');

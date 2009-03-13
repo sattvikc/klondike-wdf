@@ -19,7 +19,7 @@ body {
     width: 920px;
     height: 150px;
     margin-top: 20px;
-    background: url('images/split.png') no-repeat 0% 100%;
+    /*background: url('images/split.png') no-repeat 0% 100%;*/
 }
 
 #header #logo {
@@ -128,4 +128,49 @@ body {
     width: 720px;
     vertical-align: top;
     padding-left: 0px;
+}
+
+#body #maincontent {
+    width: 720px;
+}
+
+#maincontent .rightTop {
+    background: url('images/right-top.png') no-repeat 0% 0%;
+    float: right;
+    width: 250px;
+    margin-bottom: 10px;
+    padding-top: 5px;
+    margin-left: 10px;
+}
+.rightTop .right {
+    background: url('images/right.png') repeat-y;
+}
+.right .rightBottom {
+    width: 250px;
+    background: url('images/right-bottom.png') no-repeat 0% 100%;
+    padding: 5px;
+
+}
+
+.rightBottom h2 {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.rightBottom p {
+    margin-right: 10px;
+}
+
+#maincontent .post {
+    padding-bottom: 10px;
+    font-size: 14px;
+}
+
+.post h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.post p {
+    margin-bottom: 10px;
 }
