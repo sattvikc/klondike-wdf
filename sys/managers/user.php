@@ -1,18 +1,19 @@
 <?php
 		function user_create($username,$password) {
 			global $_SETTINGS;
-			session_start();
-			if(isset($_SESSION['user']))
+			
+			if($query=mysql_query("select * from $_SETTINGS['database']['name']['table'] where username='$username'"))
 				return FALSE;
-			$time=time();
-			$time_pass=md5($time);
-			$enc_pass=md5($password.$time_pass);
-			$_SESSION['user']=$username;
-			$_SESSION['password']=$enc_pass;
-			$query = "Insert into $_SETTINGS['database']['name']['table'](username,password) values($_SESSION ['user'],$_SESSION['password'])"; // just a dummy no such table exists
-			db_fetch_all(query);
+			$time=md5(time());
+			$password=$time.$password;
+			$enc_pass=$time.":".$password;
+			$query = "Insert into $_SETTINGS['database']['name']['table'](username,password) values($username,$enc_pass)"; // just a dummy no such table exists
+			$query=mysql_real_escape_string($query);
+			db_update_all($query);
 			session_unset();
 			session_destroy();
 			
 		}
+		
+		function user_delete($username,$password) {
 ?>
