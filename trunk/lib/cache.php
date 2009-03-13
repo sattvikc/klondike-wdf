@@ -1,4 +1,4 @@
-<?php if(!defined('KLONDIKE_VER')) die("Access denied! Are you trying to hack???"); ?>
+<?php if(!defined('KLONDIKE_VER')) die("Access denied!"); ?>
 <?php
 
     function cache_write($url, $app, $data) {
@@ -20,6 +20,13 @@
         $fname = base64_encode($fname);
         $fname = WPATH . 'var' . DS . 'cache' . DS . $fname . '.cache';
         unlink($fname);
+    }
+    
+    function cache_exists($url, $app) {
+        $fname = $url . $app;
+        $fname = base64_encode($fname);
+        $fname = WPATH . 'var' . DS . 'cache' . DS . $fname . '.cache';
+        return file_exists($fname);
     }
 
 ?>
