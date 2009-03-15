@@ -38,6 +38,10 @@
     if(!isset($_SERVER['PATH_INFO'])) $_SERVER['PATH_INFO'] = '/home';
     global $URL_PATH;
     $URL_PATH = split('/', $_SERVER['PATH_INFO']);
+    if($URL_PATH[1] == 'admin') {
+        include WPATH . 'sys' . DS . 'admin' . DS . 'index.php';
+        die('');
+    }
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
