@@ -1,3 +1,4 @@
+<?php if(!defined('KLONDIKE_VER')) die("Access denied!"); ?>
 <?php
 
     function CustomHtml_default_view($params, $subregions) {

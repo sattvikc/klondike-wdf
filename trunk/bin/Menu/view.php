@@ -1,3 +1,4 @@
+<?php if(!defined('KLONDIKE_VER')) die("Access denied!"); ?>
 <?php
 
     function Menu_list_view($params, $subregions) {
