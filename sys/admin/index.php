@@ -24,7 +24,17 @@
                     </div>
                     <div id="right">
 <?php
-    if(count($URL_PATH) == 2) include WPATH . 'sys' . DS . 'admin' . DS . 'home.php';
+    if(count($URL_PATH) == 2) {
+        include WPATH . 'sys' . DS . 'admin' . DS . 'home.php';
+    }
+    else {
+        $adminFileName = '';
+        for($i=2; $i<count($URL_PATH); $i++) {
+            $adminFileName .= $URL_PATH[$i] . '.';
+        }
+        $adminFileName .= 'php';
+        include $adminFileName;
+    }
 ?>
                     </div>
                 </div>

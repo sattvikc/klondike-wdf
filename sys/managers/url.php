@@ -1,3 +1,4 @@
+<?php if(!defined('KLONDIKE_VER')) die("Access denied!"); ?>
 <?php
 
     function url_match($url1, $url2) {
@@ -11,7 +12,23 @@
             if($surl1[$i] != $surl2[$i]) return $i; // Matched upto $i level
             $i++;
         }
-        return 1000; // This is the best match.
+        return $i; // This is the best match.
+    }
+    
+    function url_get_level() {
+        $parts = split("/", $_SERVER['PATH_INFO']);
+        $urls = yaml_load(WPATH . 'etc' . DS . 'pages.yaml');
+        
+        $pgYaml = "404.yaml"; // Bad match should result in 404 - Page not found error.
+        $matchMax = 1; // Any 2 random urls will match to 1 level
+        foreach($urls as $url) {
+            $matchCount = url_match($_SERVER['PATH_INFO'], $url['url']);
+            if($matchCount > $matchMax) {
+                $pgYaml = $url['yaml'];
+                $matchMax = $matchCount; // update better matches
+            }
+        }
+        return $matchMax;
     }
     
     function url_get_page_yaml() {
