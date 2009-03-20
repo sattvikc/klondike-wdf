@@ -6,7 +6,7 @@
     session_start();
 
     //Define klondike version
-    define('KLONDIKE_VER', 1.0);
+    define('KLONDIKE_VER', '1.0');
     
     //Shorthand Directory separator
     define('DS', DIRECTORY_SEPARATOR);
@@ -35,9 +35,23 @@
     }
     
     //Set default PATH_INFO
-    if(!isset($_SERVER['PATH_INFO'])) $_SERVER['PATH_INFO'] = '/home';
+    if(!isset($_SERVER['PATH_INFO'])) 
+        $_SERVER['PATH_INFO'] = '/home';
+    else if($_SERVER['PATH_INFO'] == '/')
+        $_SERVER['PATH_INFO'] = '/home';
+
     global $URL_PATH;
     $URL_PATH = split('/', $_SERVER['PATH_INFO']);
+    
+    $level = url_get_level();
+    
+    global $MAIN_URL, $SUB_URL;
+    
+    $SUB_URL = array_slice($URL_PATH, $level);
+    $MAIN_URL = array_slice($URL_PATH, 1, $level-1);
+    $MAIN_URL = join("/", $MAIN_URL);
+
+    
     if($URL_PATH[1] == 'admin') {
         include WPATH . 'sys' . DS . 'admin' . DS . 'index.php';
         die('');
