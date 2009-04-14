@@ -22,15 +22,15 @@ regions:
             subregions:
                 title: title
                 text: text
-
     right:
-        CustomHtml1:
+        CustomHtml2:
             app: CustomHtml
             view: default
-            controller: default
+            controller: none
             parameters:
                 title: 'Sidebar Item 1'
-                text: <p>Some nice text can be put up here to highlight some important things. Its better to have only 1 item in this place or else the page might get distorted.</p>
+                text: >
+                      <p>Some nice text can be put up here to highlight some important things. Its better to have only 1 item in this place or else the page might get distorted.</p>
             subregions:
                 title: title
                 text: text

@@ -39,7 +39,14 @@
                 }
                 else
                 {
-                    echo cache_read($MAIN_URL, $APP_ID) ;
+                    ob_start();
+                    app_load($app);
+                    $data=ob_get_contents();
+                    cache_write($MAIN_URL, $APP_ID, $data) ;
+                    ob_clean();
+                    echo $data;
+                    /* disabling caching for a while //
+                    echo cache_read($MAIN_URL, $APP_ID) ; // */
                 }
             }
         }

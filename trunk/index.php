@@ -53,6 +53,7 @@
 
     
     if($URL_PATH[1] == 'admin') {
+        define('ADMIN_MODE', true);
         include WPATH . 'sys' . DS . 'admin' . DS . 'index.php';
         die('');
     }

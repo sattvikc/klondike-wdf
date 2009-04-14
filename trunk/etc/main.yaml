@@ -1,25 +1,24 @@
-basic:
-    url: http://localhost/klondike-wdf/
-    path: D:\Program Files\wamp\www\klondike-wdf\
-    title: 
-        -Klondike
-        -WDF
-    tagline: Website Development Framework
-    urltype: noht
-    
-theme:
-    name: colours
-    logo: ''
-    
-database:
-    db: mysql
-    name: klondike
-    host: localhost
-    user: root
-    pass: ''
-    prefix: 'kd_'
-    
-libraries:
-    -mysqldb
-    -cache
-    -file
+---
+basic: 
+  url: http://localhost:8080/klondike-wdf/
+  path: C:\wamp\www\klondike-wdf\
+  title: 
+    - Klondike
+    - WDF
+  tagline: Website Development Framework
+  urltype: noht
+theme: 
+  name: white
+  logo: 
+database: 
+  db: mysql
+  name: klondike
+  host: localhost
+  user: root
+  pass: 
+  prefix: kd_
+libraries: 
+  - mysqldb
+  - cache
+  - file
+  - state

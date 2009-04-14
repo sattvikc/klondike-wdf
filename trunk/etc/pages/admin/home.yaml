@@ -1,0 +1,36 @@
+title: Home
+type: page
+theme: default
+
+inherit:
+    start:
+        -'_all_start.yaml'
+    end:
+        -'_all_end.yaml'
+
+regions:
+    content:
+        CustomHtml1:
+            app: CustomHtml
+            view: default
+            controller: none
+            parameters:
+                title: Home
+                text: Welcome to Dashboard. Pick an item to manage.
+            subregions:
+                title: title
+                text: text
+            
+        MenuItems1:
+            app: Admin
+            view: items
+            controller: none
+            parameters:
+                items:
+                    -title: Basic Settings
+                     description: Change the settings related to your installation.
+                     icon: settings.png
+                     url: admin/basic
+            subregions:
+                title: title
+                text: text

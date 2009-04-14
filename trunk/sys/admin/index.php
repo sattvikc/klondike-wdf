@@ -2,6 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
     <head>
         <link rel="stylesheet" href="<?php echo WURL; ?>sys/admin/style.css" type="text/css" />
+        <link rel="stylesheet" href="<?php echo WURL; ?>var/resources/Admin/css/smoothness.css" type="text/css" />
+        <script type="text/javascript" src="<?php echo WURL; ?>/lib/js/jquery.js"></script> 
+        <script type="text/javascript" src="<?php echo WURL; ?>/lib/js/jquery-ui.js"></script> 
     </head>
     <body>
         <div id="container">
@@ -21,21 +24,10 @@
                 </div>
                 <div id="content">
                     <div id="left">
+<?php region_theme_load('left'); ?>
                     </div>
                     <div id="right">
-<?php
-    if(count($URL_PATH) == 2) {
-        include WPATH . 'sys' . DS . 'admin' . DS . 'home.php';
-    }
-    else {
-        $adminFileName = '';
-        for($i=2; $i<count($URL_PATH); $i++) {
-            $adminFileName .= $URL_PATH[$i] . '.';
-        }
-        $adminFileName .= 'php';
-        include $adminFileName;
-    }
-?>
+<?php region_theme_load('content'); ?>
                     </div>
                 </div>
             </div>
