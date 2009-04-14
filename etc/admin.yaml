@@ -1,0 +1,6 @@
+-url: /admin
+ yaml: home.yaml
+ title: Admin Home
+-url: /admin/basic
+ yaml: basic.yaml
+ title: Admin Home

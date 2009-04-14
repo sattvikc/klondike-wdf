@@ -17,14 +17,19 @@
     
     function url_get_level() {
         $parts = split("/", $_SERVER['PATH_INFO']);
-        $urls = yaml_load(WPATH . 'etc' . DS . 'pages.yaml');
+        if(defined('ADMIN_MODE')) {
+            $urls = yaml_load(WPATH . 'etc' . DS . 'admin.yaml');
+        }
+        else {
+            $urls = yaml_load(WPATH . 'etc' . DS . 'pages.yaml');
+        }
         
-        $pgYaml = "404.yaml"; // Bad match should result in 404 - Page not found error.
+        //$pgYaml = "404.yaml"; // Bad match should result in 404 - Page not found error.
         $matchMax = 1; // Any 2 random urls will match to 1 level
         foreach($urls as $url) {
             $matchCount = url_match($_SERVER['PATH_INFO'], $url['url']);
             if($matchCount > $matchMax) {
-                $pgYaml = $url['yaml'];
+                //$pgYaml = $url['yaml'];
                 $matchMax = $matchCount; // update better matches
             }
         }
@@ -33,8 +38,12 @@
     
     function url_get_page_yaml() {
         $parts = split("/", $_SERVER['PATH_INFO']);
-        $urls = yaml_load(WPATH . 'etc' . DS . 'pages.yaml');
-        
+        if(defined('ADMIN_MODE')) {
+            $urls = yaml_load(WPATH . 'etc' . DS . 'admin.yaml');
+        }
+        else {
+            $urls = yaml_load(WPATH . 'etc' . DS . 'pages.yaml');
+        }        
         $pgYaml = "404.yaml"; // Bad match should result in 404 - Page not found error.
         $matchMax = 1; // Any 2 random urls will match to 1 level
         foreach($urls as $url) {
@@ -44,7 +53,12 @@
                 $matchMax = $matchCount; // update better matches
             }
         }
-        return $pgYaml;
+        if(defined('ADMIN_MODE')) {
+            return "admin" . DS . $pgYaml;
+        }
+        else {
+            return $pgYaml;
+        }
     }
     
     function url_generate($url) {
