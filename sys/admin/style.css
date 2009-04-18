@@ -121,14 +121,14 @@ body {
     width: 400px;
 }
 #items .icon {
-    width: 50px;
-    height: 50px;
+    width: 34px;
+    height: 40px;
     padding: 1px;
 }
 
 #items .icon img {
-    width: 48px;
-    height: 48px;
+    width: 32px;
+    height: 32px;
 }
 
 #items .itemTitle {
@@ -150,4 +150,19 @@ body {
 #items .itemDescription {
     padding-left: 15px;
     font-size: 11px;
+}
+
+.text {
+    background-color: #fff;
+    border-top: #ddd 1px solid;
+    border-left: #ddd 1px solid;
+    border-bottom: #aaa 2px solid;
+    border-right: #aaa 2px solid;
+    color: #777;
+}
+
+textarea {
+    width: 500px;
+    height: 350px;
+    overflow: scroll;
 }

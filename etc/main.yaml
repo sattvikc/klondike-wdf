@@ -22,3 +22,5 @@ libraries:
   - cache
   - file
   - state
+  - form
+  - dir

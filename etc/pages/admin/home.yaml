@@ -27,10 +27,18 @@ regions:
             controller: none
             parameters:
                 items:
-                    -title: Basic Settings
-                     description: Change the settings related to your installation.
-                     icon: settings.png
-                     url: admin/basic
+                    - title: Basic Settings
+                      description: Change the settings related to your installation.
+                      icon: settings.png
+                      url: admin/basic
+                    - title: Pages
+                      description: Manage pages of your website.
+                      icon: pages.png
+                      url: admin/pages
+                    - title: User and Groups
+                      description: Manage users and access control.
+                      icon: users.png
+                      url: admin/users
             subregions:
                 title: title
                 text: text
