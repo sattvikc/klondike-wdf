@@ -1,4 +1,4 @@
-<?php if(!defined('KLONDIKE_VER')) die("Access denied! Are you trying to hack???"); ?>
+<?php if(!defined('KLONDIKE_VER')) die("Access denied!"); ?>
 <?php
 
     // Write $data into the file $filename

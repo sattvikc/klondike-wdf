@@ -3,26 +3,28 @@
 <?php
     if($editState == "website") {
 ?>
-                        <form action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
+                        <?php form_start('basicSettings'); ?>
                         <table cellspacing="0" cellpadding="2" class="list">
                             <tr>
                                 <td class="field">Title</td>
-                                <td class="value"><input name="<?php echo $APP_ID . '_'; ?>website_title" id="<?php echo $APP_ID . '_'; ?>website_title" type="text" value="<?php echo join(" ", $_SETTINGS['basic']['title']); ?>" class="ui-state-active ui-corner-all" /></td>
+                                <td class="value"><?php form_text($APP_ID . '_website_title', join(" ", $_SETTINGS['basic']['title']), 'text', '50'); ?></td>
                             </tr>
                             <tr>
                                 <td class="field">Tagline</td>
-                                <td class="value"><input name="<?php echo $APP_ID . '_'; ?>website_tagline" id="<?php echo $APP_ID . '_'; ?>website_tagline" type="text" value="<?php echo $_SETTINGS['basic']['tagline']; ?>" class="ui-state-active ui-corner-all" /></td>
+                                <td class="value"><?php form_text($APP_ID . '_website_tagline', $_SETTINGS['basic']['tagline'], 'text', '50'); ?></td>
                             </tr>
                             <tr>
                                 <td class="field">URL Type</td>
-                                <td class="value"><input name="<?php echo $APP_ID . '_'; ?>website_urltype" id="<?php echo $APP_ID . '_'; ?>website_urltype" type="text" value="<?php echo $_SETTINGS['basic']['urltype']; ?>" class="ui-state-active ui-corner-all" /></td>
+                                <td class="value">
+                                    <?php form_select($APP_ID . '_website_urltype', array('noht' => 'No HTACCESS', 'ht' => 'Use HTACCESS'), $_SETTINGS['basic']['urltype'], 'text'); ?>
+                                </td>
                             </tr>
                         </table>
                         <p>
-                            <input name="<?php echo $APP_ID . '_'; ?>website_save" id="<?php echo $APP_ID . '_'; ?>website_save" type="submit" value="Save" class="ui-state-default ui-corner-all" />
-                            <input name="<?php echo $APP_ID . '_'; ?>website_cancel" id="<?php echo $APP_ID . '_'; ?>website_cancel" type="submit" value="Cancel" class="ui-state-default ui-corner-all" />
+                            <?php form_button($APP_ID . '_website_save', 'Save', 'ui-state-default ui-corner-all'); ?>
+                            <?php form_button($APP_ID . '_website_cancel', 'Cancel', 'ui-state-default ui-corner-all'); ?>
                         </p>
-                        </form>
+                        <?php form_end(); ?>
 <?php
     }
     else {
@@ -39,7 +41,7 @@
                             </tr>
                             <tr>
                                 <td class="field">URL Type</td>
-                                <td class="value"><?php echo $_SETTINGS['basic']['urltype']; ?></td>
+                                <td class="value"><?php $urlTypes = array('noht' => 'No HTACCESS', 'ht' => 'Use HTACCESS'); echo $urlTypes[$_SETTINGS['basic']['urltype']]; ?></td>
                             </tr>
                         </table>
                         <p>

@@ -6,10 +6,13 @@
         $surl1 = split("/", $url1);
         $surl2 = split("/", $url2); // break apart the urls
         
+        
         $minDepth = (count($surl1) < count($surl2))? count($surl1) : count($surl2); // match until smallest url parts
         
         while($i < $minDepth) {
-            if($surl1[$i] != $surl2[$i]) return $i; // Matched upto $i level
+            if($surl1[$i] != $surl2[$i]) {
+                return $i; // Matched upto $i level
+            }
             $i++;
         }
         return $i; // This is the best match.
@@ -29,7 +32,6 @@
         foreach($urls as $url) {
             $matchCount = url_match($_SERVER['PATH_INFO'], $url['url']);
             if($matchCount > $matchMax) {
-                //$pgYaml = $url['yaml'];
                 $matchMax = $matchCount; // update better matches
             }
         }

@@ -42,6 +42,9 @@
 
     global $URL_PATH;
     $URL_PATH = split('/', $_SERVER['PATH_INFO']);
+    if($URL_PATH[1] == 'admin') {
+        define('ADMIN_MODE', true);
+    }
     
     $level = url_get_level();
     
@@ -50,10 +53,8 @@
     $SUB_URL = array_slice($URL_PATH, $level);
     $MAIN_URL = array_slice($URL_PATH, 1, $level-1);
     $MAIN_URL = join("/", $MAIN_URL);
-
     
     if($URL_PATH[1] == 'admin') {
-        define('ADMIN_MODE', true);
         include WPATH . 'sys' . DS . 'admin' . DS . 'index.php';
         die('');
     }

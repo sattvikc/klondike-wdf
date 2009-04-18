@@ -12,7 +12,7 @@
 			case 'postgresql' : postgredb_fetch_all($query);
 								break;
 		
-			default : echo " unknown format";
+			default : echo "unknown format";
 	    }
 	}
 	
@@ -21,10 +21,9 @@
 		if($_SETTINGS['database']['name']=="mysql")	{
 			mysqldb_update_all($query)
 		}
-		else if($_SETTINGS['database']['name']=="sqlite")	{
+		else if($_SETTINGS['database']['name']=="sqlite") {
 			sqlitedb_update_all($query);
 		}
-		
-			
+	}
 
 ?>

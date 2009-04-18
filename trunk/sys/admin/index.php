@@ -3,8 +3,10 @@
     <head>
         <link rel="stylesheet" href="<?php echo WURL; ?>sys/admin/style.css" type="text/css" />
         <link rel="stylesheet" href="<?php echo WURL; ?>var/resources/Admin/css/smoothness.css" type="text/css" />
-        <script type="text/javascript" src="<?php echo WURL; ?>/lib/js/jquery.js"></script> 
-        <script type="text/javascript" src="<?php echo WURL; ?>/lib/js/jquery-ui.js"></script> 
+        <link rel="stylesheet" href="<?php echo WURL; ?>var/resources/Admin/css/selectzor.css" type="text/css" />
+        <script type="text/javascript" src="<?php echo WURL; ?>/lib/js/jquery.js"></script>
+        <script type="text/javascript" src="<?php echo WURL; ?>/lib/js/jquery-ui.js"></script>
+        <script type="text/javascript" src="<?php echo WURL; ?>/lib/js/selectzor.js"></script>
     </head>
     <body>
         <div id="container">
