@@ -1,7 +1,7 @@
 ---
 basic: 
-  url: http://localhost:8080/klondike-wdf/
-  path: C:\wamp\www\klondike-wdf\
+  url: http://localhost/klondike-wdf/
+  path: /home/sattvik/Desktop/www/klondike-wdf/
   title: 
     - Klondike
     - WDF
