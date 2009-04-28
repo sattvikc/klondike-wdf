@@ -39,6 +39,10 @@ regions:
                       description: Manage users and access control.
                       icon: users.png
                       url: admin/users
+                    - title: Server Information
+                      description: View server information and recommended settings.
+                      icon: server.png
+                      url: admin/server-info
             subregions:
                 title: title
                 text: text

@@ -6,3 +6,6 @@
  title: Admin Home
 -url: /admin/pages
  yaml: pages.yaml
+-url: /admin/server-info
+ yaml: serverInfo.yaml
+

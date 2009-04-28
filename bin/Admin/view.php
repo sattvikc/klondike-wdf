@@ -3,4 +3,6 @@
     include WPATH . 'bin' . DS . 'Admin' . DS . 'views' . DS . 'items.php';
     include WPATH . 'bin' . DS . 'Admin' . DS . 'views' . DS . 'basicSettings.php';
     include WPATH . 'bin' . DS . 'Admin' . DS . 'views' . DS . 'pageList.php';
+    include WPATH . 'bin' . DS . 'Admin' . DS . 'views' . DS . 'directoryPermissions.php';
+    include WPATH . 'bin' . DS . 'Admin' . DS . 'views' . DS . 'serverConfig.php';
 ?>
