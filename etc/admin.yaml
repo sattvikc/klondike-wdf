@@ -8,4 +8,5 @@
  yaml: pages.yaml
 -url: /admin/server-info
  yaml: serverInfo.yaml
-
+-url: /admin/packages
+ yaml: packages.yaml

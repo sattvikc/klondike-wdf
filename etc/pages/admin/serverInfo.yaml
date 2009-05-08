@@ -15,33 +15,23 @@ regions:
             view: default
             controller: none
             parameters:
-                title: Pages
-                text: View/Manage pages of your website.
+                title: Server Information
+                text: >
+                        <p>Shows various server information and recommended settings.</p>
             subregions:
                 title: title
                 text: text
             
         Settings1:
             app: Admin
-            view: pageList
-            controller: pageList
-            parameters:
-            subregions:
-            
-        CustomHtml2:
-            app: CustomHtml
-            view: default
+            view: serverConfig
             controller: none
             parameters:
-                title: Basic Settings
-                text: Click save to save the page. Navigate off the page to cancel changes.
             subregions:
-                title: title
-                text: text
-                
+        
         Settings2:
             app: Admin
-            view: pageBasicEdit
-            controller: pageBasicEdit
+            view: directoryPermissions
+            controller: none
             parameters:
             subregions:

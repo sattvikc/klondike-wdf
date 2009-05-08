@@ -1,21 +1,24 @@
-title: Home
-
-inherit:
-    start:
-        -'_all_start.yaml'
-    end:
-        -'_all_end.yaml'
-
-regions:
-    content:
-        CustomHtml1:
-            app: CustomHtml
-            view: default
-            controller: none
-            parameters:
-                title: '404 - Page not found'
-                text: >
-                      <p>You might have mistyped the url. Please check.</p>
-            subregions:
-                title: title
-                text: text
+---
+title: Page not found
+type: page
+theme: default
+inherit: 
+  start: 
+    - _all_start.yaml
+  end: 
+    - _all_end.yaml
+regions: 
+  content: 
+    CustomHtml1: 
+      app: CustomHtml
+      view: default
+      controller: none
+      parameters: 
+        title: |
+          404 - Page not found
+        text: >
+          <p>You might have mistyped the url.
+          Please check.</p>
+      subregions: 
+        title: title
+        text: text

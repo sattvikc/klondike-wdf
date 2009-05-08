@@ -3,8 +3,6 @@
 
     function app_load($app) {
         $funcName = $app['app'] . "_" . $app['view'] . "_view";
-
-
         if(! function_exists($funcName)) { // Check if app's code was included. If not, include it.
             require_once(WPATH . "bin" . DS . $app['app'] . DS . 'model.php');
             require_once(WPATH . "bin" . DS . $app['app'] . DS . 'controller.php');
