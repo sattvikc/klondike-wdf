@@ -1,0 +1,18 @@
+apps:
+ - name: CustomHtml
+   files:
+     scripts:
+       - bin/CustomHtml/view.php
+       - bin/CustomHtml/controller.php
+       - bin/CustomHtml/model.php
+     settings:
+       - etc/CustomHtml/default.yaml
+     resources:
+ - name: Menu
+     scripts:
+       - bin/Menu/view.php
+       - bin/Menu/controller.php
+       - bin/Menu/model.php
+     settings:
+       - etc/Menu/default.yaml
+     resources:

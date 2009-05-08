@@ -65,7 +65,7 @@
 <?php theme_load_head(); ?>
     </head>
     <body>
-<?php theme_load_body(); ?>        
+<?php theme_load_body(); ?>
 <?php
     //Measure Execution time
     $time_end = microtime(true);

@@ -1,36 +1,21 @@
+---
 title: Home
 type: page
 theme: default
-
-inherit:
-    start:
-        -'_all_start.yaml'
-    end:
-        -'_all_end.yaml'
-
-regions:
-    content:
-        CustomHtml1:
-            app: CustomHtml
-            view: default
-            controller: none
-            parameters:
-                title: 'Objective'
-                text: >
-                      <p>This project aims at developing a single Website Development Framework that provides a useable system along with an easy development platform for websites. This project can be placed somewhere between a Content Management System and a Web Operating System.</p>
-                      <p>It provides a system for storing, controlling, versioning, and publishing of different kinds of electronic media such as articles, documents, manuals, images, audio, video, etc. To provide such functionality, this Project derives concepts from a Web OS such as Application Development, Install/Uninstall Facility, Package Management, Code Security &amp; Integrity, File Management, etc.</p>
-            subregions:
-                title: title
-                text: text
-    right:
-        CustomHtml2:
-            app: CustomHtml
-            view: default
-            controller: none
-            parameters:
-                title: 'Sidebar Item 1'
-                text: >
-                      <p>Some nice text can be put up here to highlight some important things. Its better to have only 1 item in this place or else the page might get distorted.</p>
-            subregions:
-                title: title
-                text: text
+inherit: 
+  start: 
+    - _all_start.yaml
+  end: 
+    - _all_end.yaml
+regions: 
+  content: 
+    CustomHtml2: 
+      app: CustomHtml
+      view: default
+      controller: none
+      parameters: 
+        title: Home Page
+        text: <p>Thanks for using klondike.</p>
+      subregions: 
+        title: title
+        text: text

@@ -1,4 +1,6 @@
 title: Design
+type: page
+theme: default
 
 inherit:
     start:

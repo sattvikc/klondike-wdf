@@ -21,15 +21,15 @@
                             </tr>
                         </table>
                         <p>
-                            <?php form_button($APP_ID . '_website_save', 'Save', 'ui-state-default ui-corner-all'); ?>
-                            <?php form_button($APP_ID . '_website_cancel', 'Cancel', 'ui-state-default ui-corner-all'); ?>
+                            <?php form_link_button($APP_ID . '_website_save', 'Save', 'basicSettings', ''); ?>
+                            <?php form_link_button($APP_ID . '_website_cancel', 'Cancel', 'basicSettings', ''); ?>
                         </p>
                         <?php form_end(); ?>
 <?php
     }
     else {
 ?>
-                        <form action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
+                        <?php form_start('basicSettings'); ?>
                         <table cellspacing="0" cellpadding="2" class="list">
                             <tr>
                                 <td class="field">Title</td>
@@ -45,9 +45,9 @@
                             </tr>
                         </table>
                         <p>
-                            <input name="<?php echo $APP_ID . '_'; ?>website" id="<?php echo $APP_ID . '_'; ?>website" type="submit" value="Edit" class="ui-state-default ui-corner-all" />
+                            <?php form_link_button($APP_ID . '_website_edit', 'Edit', 'basicSettings', ''); ?>
                         </p>
-                        </form>
+                        <?php form_end(); ?>
 <?php
     }
 ?>

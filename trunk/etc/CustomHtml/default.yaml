@@ -8,9 +8,8 @@ parameters:
     views:
         default:
             title:
-                type: string
-                maxLength: 50
+                type: text
                 defaultValue: CustomHtml
             text:
-                type: string
+                type: largetext
                 defaultValue: Edit this text

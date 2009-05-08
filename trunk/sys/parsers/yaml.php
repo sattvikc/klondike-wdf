@@ -4,10 +4,10 @@
     global $LOADED_YAML;
     $LOADED_YAML = array();
     
-    function yaml_load($filename) 
+    function yaml_load($filename, $force=false) 
     {
         global $LOADED_YAML;
-        if(!isset($LOADED_YAML[$filename])) {
+        if((!isset($LOADED_YAML[$filename])) || $force) {
             $LOADED_YAML[$filename] = Spyc::YAMLLoad($filename);
         }
         return $LOADED_YAML[$filename];
