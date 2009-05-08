@@ -26,14 +26,24 @@
         echo " />\n";
     }
     
+    function form_password($id, $text, $class='', $size='') {
+        echo "<input type=\"password\"";
+        if($id != '') echo " id=\"$id\" name=\"$id\"";
+        if($text != '') echo " value=\"$text\"";
+        if($size != '') echo " size=\"$size\"";
+        if($class != '') echo " class=\"$class\"";
+        echo " />\n";
+    }
+    
     function form_textarea($id, $text, $class='', $cols='', $rows='') {
         echo "<textarea";
         if($id != '') echo " id=\"$id\" name=\"$id\"";
-        if($text != '') echo " value=\"$text\"";
         if($cols != '') echo " size=\"$cols\"";
         if($rows != '') echo " size=\"$rows\"";
         if($class != '') echo " class=\"$class\"";
-        echo " />\n";
+        echo ">\n";
+        if($text != '') echo "$text";
+        echo "</textarea>\n";
     }
     
     function form_select($id, $items, $selectedItem, $class='') {

@@ -18,8 +18,10 @@ database:
   prefix: kd_
 libraries: 
   - mysqldb
+  - sqlitedb
   - cache
   - file
   - state
   - form
   - dir
+  - db

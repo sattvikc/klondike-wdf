@@ -1,3 +1,4 @@
+---
 title: Home
 type: page
 theme: default
@@ -14,6 +15,7 @@ regions:
             app: CustomHtml
             view: default
             controller: none
+            condition: || (count($SUB_URL) == 0)
             parameters:
                 title: Pages
                 text: View/Manage pages of your website.
@@ -25,6 +27,7 @@ regions:
             app: Admin
             view: pageList
             controller: pageList
+            condition: || (count($SUB_URL) == 0)
             parameters:
             subregions:
             
@@ -32,6 +35,7 @@ regions:
             app: CustomHtml
             view: default
             controller: none
+            condition: || (count($SUB_URL) == 2 && $SUB_URL[1] == 'edit' )
             parameters:
                 title: Basic Settings
                 text: Click save to save the page. Navigate off the page to cancel changes.
@@ -43,5 +47,66 @@ regions:
             app: Admin
             view: pageBasicEdit
             controller: pageBasicEdit
+            condition: || (count($SUB_URL) == 2 && $SUB_URL[1] == 'edit' )
+            parameters:
+            subregions:
+        
+        CustomHtml5:
+            app: CustomHtml
+            view: default
+            controller: none
+            condition: || (count($SUB_URL) == 2 && $SUB_URL[1] == 'edit' )
+            parameters:
+                title: Page Edit
+                text: 
+            subregions:
+                title: title
+                text: text
+                
+        Settings5:
+            app: Admin
+            view: pageFileEdit
+            controller: pageFileEdit
+            condition: || (count($SUB_URL) == 2 && $SUB_URL[1] == 'edit' )
+            parameters:
+            subregions:
+        
+        CustomHtml3:
+            app: CustomHtml
+            view: default
+            controller: none
+            condition: || (count($SUB_URL) == 2 && $SUB_URL[1] == 'delete' )
+            parameters:
+                title: Confirm Delete
+                text: Are you sure you want to delete selected page?
+            subregions:
+                title: title
+                text: text
+                
+        Settings3:
+            app: Admin
+            view: pageDelete
+            controller: pageDelete
+            condition: || (count($SUB_URL) == 2 && $SUB_URL[1] == 'delete' )
+            parameters:
+            subregions:
+            
+        CustomHtml4:
+            app: CustomHtml
+            view: default
+            controller: none
+            condition: || (count($SUB_URL) == 1)
+            parameters:
+                title: File Contents
+                text: 
+            subregions:
+                title: title
+                text: text
+        
+        Settings4:
+            app: Admin
+            view: pageShowYaml
+            controller: none
+            condition: || (count($SUB_URL) == 1)
             parameters:
             subregions:

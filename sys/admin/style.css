@@ -68,11 +68,24 @@ body {
 
 #left {
     background: #abc;
-    padding: left;
+    padding: 5px;
     width: 250px;
     background-color: #eee;
     border: #ddd 1px dotted;
     float: left;
+}
+
+
+#left h1 {
+    border-bottom: #ddd 1px solid;
+    font-size: 20px;
+    font-weight: normal;
+}
+
+#left h2 {
+    border-bottom: #ddd 1px solid;
+    font-size: 16px;
+    font-weight: normal;
 }
 
 #right {

@@ -6,6 +6,7 @@
         $db = mysql_connect($_SETTINGS['database']['host'], $_SETTINGS['database']['user'], $_SETTINGS['database']['pass']) or die ('Cannot connect to MySQL!');
         mysql_select_db( $_SETTINGS['database']['name'] ) or die ("Cannot select database!");
         $res = mysql_query($query) or die ("Can't query database!");
+        
         while ($row = mysql_fetch_assoc($res)) {
             array_push($result, $row);
         }
@@ -16,6 +17,8 @@
 
     function mysqldb_update_all($query) {
         global $_SETTINGS;
+        echo $query;
+        
         $db = mysql_connect($_SETTINGS['database']['host'], $_SETTINGS['database']['user'], $_SETTINGS['database']['pass']) or die ('Cannot connect to MySQL!');
         mysql_select_db( $_SETTINGS['database']['name'] ) or die ("Cannot select database!");
         $res = mysql_query($query) or die ("Can't insert/delete!");

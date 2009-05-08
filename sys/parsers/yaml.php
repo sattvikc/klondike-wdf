@@ -9,8 +9,29 @@
         global $LOADED_YAML;
         if((!isset($LOADED_YAML[$filename])) || $force) {
             $LOADED_YAML[$filename] = Spyc::YAMLLoad($filename);
+            yaml_process( $LOADED_YAML[$filename] );
         }
         return $LOADED_YAML[$filename];
+    }
+    
+    function yaml_process(&$yaml) 
+    {
+        global $_CUR_REGION, $_SETTINGS, $MAIN_URL, $APP_ID, $SUB_URL;
+        if(is_array($yaml)) {
+            foreach( $yaml as $key => &$val ) {
+                yaml_process($val);
+            }
+        }
+        else {
+            if(substr_count($yaml, '||') > 0) {
+                $code = $yaml;
+                $code = str_replace('||', '', $code);
+                $code = "\$retVal = $code;";
+                eval($code);
+                $yaml = $retVal;
+                //$yaml = 1;
+            }
+        }
     }
 
     class Spyc {
