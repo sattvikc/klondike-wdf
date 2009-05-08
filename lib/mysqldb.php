@@ -17,12 +17,12 @@
 
     function mysqldb_update_all($query) {
         global $_SETTINGS;
-        echo $query;
         
         $db = mysql_connect($_SETTINGS['database']['host'], $_SETTINGS['database']['user'], $_SETTINGS['database']['pass']) or die ('Cannot connect to MySQL!');
         mysql_select_db( $_SETTINGS['database']['name'] ) or die ("Cannot select database!");
         $res = mysql_query($query) or die ("Can't insert/delete!");
+        $result = mysql_affected_rows();
         mysql_close($db);
-        return mysql_affected_rows();
+        return $result;
     }
 ?>

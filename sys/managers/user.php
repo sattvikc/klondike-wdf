@@ -13,14 +13,13 @@
             
         }
         
-        function user_delete($username, $password) {
+        function user_delete($username) {
             global $_SETTINGS;
-            if(!($query=db_fetch_all("select * from $_SETTINGS[database][prefix]users where username='$username'")))
+            $query=db_update_all("DELETE FROM " . $_SETTINGS['database']['prefix'] . "users where username='$username'");
+            if($query != 1)
                 return FALSE;
-                
-                $query="Delete from $_SETTINGS[database][prefix]users where username='$username'";
-                db_update_all($query);
-                
+            db_update_all($query);
+            return true;
         }
         
         function user_change_password($username,$password,$new_pass)    {

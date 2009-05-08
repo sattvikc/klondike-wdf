@@ -20,21 +20,3 @@ regions:
             subregions:
                 title: title
                 text: text
-            
-        MenuItems1:
-            app: Admin
-            view: items
-            controller: none
-            parameters:
-                items:
-                    - title: Manage Users
-                      description: Change the settings related to your installation.
-                      icon: users.png
-                      url: admin/users/create
-                    - title: Manage Groups
-                      description: Manage pages of your website.
-                      icon: groups.png
-                      url: admin/users
-            subregions:
-                title: title
-                text: text
