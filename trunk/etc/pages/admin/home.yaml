@@ -14,6 +14,7 @@ regions:
             app: CustomHtml
             view: default
             controller: none
+            allowUser: admin
             parameters:
                 title: Home
                 text: Welcome to Dashboard. Pick an item to manage.
@@ -25,6 +26,7 @@ regions:
             app: Admin
             view: items
             controller: none
+            allowUser: admin
             parameters:
                 items:
                     - title: Basic Settings
@@ -35,18 +37,25 @@ regions:
                       description: Manage pages of your website.
                       icon: pages.png
                       url: admin/pages
-                    - title: User and Groups
-                      description: Manage users and access control.
+                    - title: Users
+                      description: Manage users of the system.
                       icon: users.png
                       url: admin/users
-                    - title: Packages
-                      description: Install/Uninstall Apps of the system.
-                      icon: packages.png
-                      url: admin/packages
                     - title: Server Information
                       description: View server information and recommended settings.
                       icon: server.png
                       url: admin/server-info
+            subregions:
+                title: title
+                text: text
+        AdminRequired:
+            app: CustomHtml
+            view: default
+            controller: none
+            denyUser: admin
+            parameters:
+                title: Access Denied
+                text: You don't have permission to access this page.
             subregions:
                 title: title
                 text: text

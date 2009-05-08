@@ -1,9 +1,9 @@
+---
 title: End Inherit
 type: page
 theme: default
-
-inherit:
-    start:
-        -'none'
-    end:
-        -'none'
+inherit: 
+  start: 
+    - none
+  end: 
+    - none

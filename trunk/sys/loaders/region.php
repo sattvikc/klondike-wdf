@@ -16,7 +16,10 @@
         if(is_array($page['inherit']['start'])) { // Load the pages inherited in start section
             foreach($page['inherit']['start'] as $pgYaml) {
                 if($pgYaml != 'none')  { 
-                    $pgYaml = WPATH . "etc" . DS . "pages" . DS . $pgYaml;
+                    if(defined('ADMIN_MODE'))
+                        $pgYaml = WPATH . "etc" . DS . "pages" . DS . "admin" . DS . $pgYaml;
+                    else
+                        $pgYaml = WPATH . "etc" . DS . "pages" . DS . $pgYaml;
                     region_load($pgYaml, $regionName); 
                 }
             }

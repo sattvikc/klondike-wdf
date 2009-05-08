@@ -10,3 +10,5 @@
  yaml: serverInfo.yaml
 -url: /admin/packages
  yaml: packages.yaml
+-url: /admin/users
+ yaml: userngroups.yaml

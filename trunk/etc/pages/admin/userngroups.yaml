@@ -1,0 +1,40 @@
+title: Home
+type: page
+theme: default
+
+inherit:
+    start:
+        -'_all_start.yaml'
+    end:
+        -'_all_end.yaml'
+
+regions:
+    content:
+        CustomHtml1:
+            app: CustomHtml
+            view: default
+            controller: none
+            parameters:
+                title: Users and Groups
+                text: Pick a task.
+            subregions:
+                title: title
+                text: text
+            
+        MenuItems1:
+            app: Admin
+            view: items
+            controller: none
+            parameters:
+                items:
+                    - title: Manage Users
+                      description: Change the settings related to your installation.
+                      icon: users.png
+                      url: admin/users/create
+                    - title: Manage Groups
+                      description: Manage pages of your website.
+                      icon: groups.png
+                      url: admin/users
+            subregions:
+                title: title
+                text: text

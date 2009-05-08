@@ -4,4 +4,6 @@
     
     include WPATH . 'bin' . DS . 'Admin' . DS . 'controllers' . DS . 'pageBasicEdit.php';
     include WPATH . 'bin' . DS . 'Admin' . DS . 'controllers' . DS . 'pageList.php';
+    include WPATH . 'bin' . DS . 'Admin' . DS . 'controllers' . DS . 'pageDelete.php';
+    include WPATH . 'bin' . DS . 'Admin' . DS . 'controllers' . DS . 'pageFileEdit.php';
 ?>

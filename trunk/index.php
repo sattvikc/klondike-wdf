@@ -24,6 +24,7 @@
     
     //Load the managers
     require_once('sys/managers/url.php');
+    require_once('sys/managers/user.php');
     
     //More shorthands, for coder's comfort.. :)
     define('WURL', $_SETTINGS['basic']['url']);

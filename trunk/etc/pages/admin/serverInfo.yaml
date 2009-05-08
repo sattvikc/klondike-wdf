@@ -28,10 +28,3 @@ regions:
             controller: none
             parameters:
             subregions:
-        
-        Settings2:
-            app: Admin
-            view: directoryPermissions
-            controller: none
-            parameters:
-            subregions:
