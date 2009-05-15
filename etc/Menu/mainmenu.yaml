@@ -1,7 +1,9 @@
 items:
  -url: home
   text: Home
- -url: design
-  text: Design
- -url: innovation
-  text: Innovations
+ -url: cacheing
+  text: Cacheing
+ -url: inheritance
+  text: Inheritance
+ -url: differenttheme
+  text: Theme

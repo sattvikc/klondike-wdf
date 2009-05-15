@@ -31,25 +31,31 @@
         if(isset($page['regions'][$regionName])) {
             foreach($page['regions'][$regionName] as $appId => $app) {
                 $APP_ID = $appId;
-                if(!cache_exists($MAIN_URL, $APP_ID))
-                {
-                    ob_start();
-                    app_load($app);
-                    $data=ob_get_contents();
-                    cache_write($MAIN_URL, $APP_ID, $data) ;
-                    ob_clean();
-                    echo $data;
+                if(isset($app['cache']) && $app['cache'] == 'yes') {
+                    if(!cache_exists($MAIN_URL, $APP_ID))
+                    {
+                        ob_start();
+                        app_load($app);
+                        $data=ob_get_contents();
+                        cache_write($MAIN_URL, $APP_ID, $data) ;
+                        ob_clean();
+                        echo $data;
+                    }
+                    else
+                    {
+                        /*
+                        ob_start();
+                        app_load($app);
+                        $data=ob_get_contents();
+                        cache_write($MAIN_URL, $APP_ID, $data) ;
+                        ob_clean();
+                        echo $data; // */
+                        // disabling caching for a while //
+                        echo cache_read($MAIN_URL, $APP_ID) ; // */
+                    }
                 }
-                else
-                {
-                    ob_start();
+                else {
                     app_load($app);
-                    $data=ob_get_contents();
-                    cache_write($MAIN_URL, $APP_ID, $data) ;
-                    ob_clean();
-                    echo $data;
-                    /* disabling caching for a while //
-                    echo cache_read($MAIN_URL, $APP_ID) ; // */
                 }
             }
         }

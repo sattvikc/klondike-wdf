@@ -13,9 +13,23 @@ regions:
       app: CustomHtml
       view: default
       controller: none
+      cache: no
       parameters: 
         title: Home Page
-        text: Home page
+        text: > 
+                Welcome to the Development Framework for Web.
+      subregions: 
+        title: title
+        text: text
+
+  right:
+    CustomHtml1: 
+      app: CustomHtml
+      view: default
+      controller: none
+      parameters: 
+        title: Home Page
+        text: My Content 1
       subregions: 
         title: title
         text: text

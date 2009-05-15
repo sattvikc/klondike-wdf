@@ -1,0 +1,22 @@
+---
+title: Design
+type: page
+theme: default
+inherit: 
+  start: 
+    - p3.yaml
+  end: 
+    - p4.yaml
+regions: 
+  content: 
+    p1: 
+      app: CustomHtml
+      view: default
+      controller: none
+      parameters: 
+        title: p1.yaml
+        text: >
+                This page inherits p3.yaml in start section and p4.yaml in end section.
+      subregions: 
+        title: title
+        text: text
