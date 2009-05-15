@@ -3,12 +3,12 @@ basic:
   url: http://localhost/klondike-wdf/
   path: c:\wamp\www\klondike-wdf\
   title: 
-    - Klondike
-    - WDF
+    - Hello
+    - World
   tagline: Website Development Framework
   urltype: noht
 theme: 
-  name: white
+  name: iblog
 database: 
   db: mysql
   name: klondike

@@ -72,7 +72,7 @@
     $time_end = microtime(true);
     $time = $time_end - $time_start;
     // print time taken for checking performance
-    echo "<center><pre>Page took $time seconds\n</pre></center>"; //*/    
+    echo "<pre>Page took $time seconds\n</pre>"; //*/
 ?>
     </body>
 </html>

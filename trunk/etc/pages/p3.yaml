@@ -1,0 +1,22 @@
+---
+title: Design
+type: page
+theme: default
+inherit: 
+  start: 
+    - none
+  end: 
+    - none
+regions: 
+  content: 
+    p3: 
+      app: CustomHtml
+      view: default
+      controller: none
+      parameters: 
+        title: p3.yaml
+        text: >
+                Be careful in using APP_IDs when you are using inheritance.
+      subregions: 
+        title: title
+        text: text

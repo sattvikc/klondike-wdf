@@ -1,0 +1,22 @@
+---
+title: Design
+type: page
+theme: default
+inherit: 
+  start: 
+    - none
+  end: 
+    - none
+regions: 
+  content: 
+    p2: 
+      app: CustomHtml
+      view: default
+      controller: none
+      parameters: 
+        title: p4.yaml
+        text: >
+                Beware of infinite inheritance.
+      subregions: 
+        title: title
+        text: text

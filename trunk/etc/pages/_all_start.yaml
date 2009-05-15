@@ -18,3 +18,14 @@ regions:
       subregions: 
         url: url
         text: text
+  right:
+    EverywhereApp: 
+      app: CustomHtml
+      view: default
+      controller: none
+      parameters: 
+        title: Sidebar Item
+        text: This app is initiated under _all_start.yaml which is inherited by other pages. Since this is under start inheritence, it will appear before the apps of current page.
+      subregions: 
+        title: title
+        text: text

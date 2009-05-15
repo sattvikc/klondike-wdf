@@ -1,6 +1,8 @@
 -url: /home
  yaml: home.yaml
- title: Home
--url: /design
- yaml: design.yaml
- title: Design
+-url: /differenttheme
+ yaml: differentTheme.yaml
+-url: /cacheing
+ yaml: cache.yaml
+-url: /inheritance
+ yaml: inheritance.yaml

@@ -1,7 +1,7 @@
         <div id="wrap">
             <div id="header">
                <div id="head">
-                   <span id="title"><?php echo $PAGE_TITLE; ?></span>
+                   <span id="title"></span>
                </div>
                <div id="logo">
                    <span class="alternate1"><?php echo $_SETTINGS['basic']['title'][0]; ?></span><span class="alternate2"><?php echo $_SETTINGS['basic']['title'][1]; ?></span><br />
