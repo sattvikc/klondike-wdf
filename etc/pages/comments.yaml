@@ -1,0 +1,45 @@
+---
+title: Home
+type: page
+theme: default
+inherit: 
+  start: 
+    - _all_start.yaml
+  end: 
+    - _all_end.yaml
+regions: 
+  content: 
+    CustomHtml2: 
+      app: CustomHtml
+      view: default
+      controller: none
+      parameters: 
+        title: Different theme
+        text: >
+                This page is meant for user comments.
+      subregions: 
+        title: title
+        text: text
+  comment:
+    Comments1:
+        app: Comments
+        view: display
+        controller: none
+        parameters:
+            target: comment1
+            targetType: commentPage
+        subregions:
+            title: author
+            text: text
+            datetime: datetime
+    Comments2:
+        app: Comments
+        view: new
+        controller: new
+        parameters:
+            target: comment1
+            targetType: commentPage
+        subregions:
+            title: author
+            text: text
+            datetime: datetime

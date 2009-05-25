@@ -1,78 +1,89 @@
 <?php if(!defined('KLONDIKE_VER')) die("Access denied!"); ?>
 <?php
     function form_start($formName) {
-        echo "<form name=\"$formName\" method=\"post\" action=\"$_SERVER[PHP_SELF]\">\n";
+        return "<form name=\"$formName\" method=\"post\" action=\"$_SERVER[PHP_SELF]\">\n";
     }
     
     function form_end() {
-        echo "</form>\n";
+        return "</form>\n";
     }
     
     function form_button($id, $text, $class='') {
-        echo "<input type=\"submit\" id=\"$id\" name=\"$id\" class=\"$class\" value=\"$text\" />\n";
+        return "<input type=\"submit\" id=\"$id\" name=\"$id\" class=\"$class\" value=\"$text\" />\n";
     }
 
     function form_link_button($id, $text, $formName, $class='') {
-        echo "<input type=\"hidden\" id=\"$id\" name=\"$id\" value=\"\" />\n";
-        echo "<a href=\"#\" class=\"$class\" onClick=\"$('#$id').attr('value', '$text'); document.$formName.submit();\" >$text</a>\n";
+        $res = '';
+        $res .= "<input type=\"hidden\" id=\"$id\" name=\"$id\" value=\"\" />\n";
+        $res .= "<a href=\"#\" class=\"$class\" onClick=\"$('#$id').attr('value', '$text'); document.$formName.submit();\" >$text</a>\n";
+        return $res;
     }
     
     function form_text($id, $text, $class='', $size='') {
-        echo "<input type=\"text\"";
-        if($id != '') echo " id=\"$id\" name=\"$id\"";
-        if($text != '') echo " value=\"$text\"";
-        if($size != '') echo " size=\"$size\"";
-        if($class != '') echo " class=\"$class\"";
-        echo " />\n";
+        $res = '';
+        $res .= "<input type=\"text\"";
+        if($id != '') $res .= " id=\"$id\" name=\"$id\"";
+        if($text != '') $res .= " value=\"$text\"";
+        if($size != '') $res .= " size=\"$size\"";
+        if($class != '') $res .= " class=\"$class\"";
+        $res .= " />\n";
+        return $res;
     }
     
     function form_password($id, $text, $class='', $size='') {
-        echo "<input type=\"password\"";
-        if($id != '') echo " id=\"$id\" name=\"$id\"";
-        if($text != '') echo " value=\"$text\"";
-        if($size != '') echo " size=\"$size\"";
-        if($class != '') echo " class=\"$class\"";
-        echo " />\n";
+        $res = '';
+        $res .= "<input type=\"password\"";
+        if($id != '') $res .= " id=\"$id\" name=\"$id\"";
+        if($text != '') $res .= " value=\"$text\"";
+        if($size != '') $res .= " size=\"$size\"";
+        if($class != '') $res .= " class=\"$class\"";
+        $res .= " />\n";
+        return $res;
     }
     
     function form_textarea($id, $text, $class='', $cols='', $rows='') {
-        echo "<textarea";
-        if($id != '') echo " id=\"$id\" name=\"$id\"";
-        if($cols != '') echo " size=\"$cols\"";
-        if($rows != '') echo " size=\"$rows\"";
-        if($class != '') echo " class=\"$class\"";
-        echo ">\n";
-        if($text != '') echo "$text";
-        echo "</textarea>\n";
+        $res = '';
+        $res .= "<textarea";
+        if($id != '') $res .= " id=\"$id\" name=\"$id\"";
+        if($cols != '') $res .= " size=\"$cols\"";
+        if($rows != '') $res .= " size=\"$rows\"";
+        if($class != '') $res .= " class=\"$class\"";
+        $res .= ">\n";
+        if($text != '') $res .= "$text";
+        $res .= "</textarea>\n";
+        return $res;
     }
     
     function form_select($id, $items, $selectedItem, $class='') {
-        echo "<select id=\"$id\" name=\"$id\" selectzor=\"1\"";
-        if($class != '') echo " class=\"$class\"";
-        echo ">\n";
+        $res = '';
+        $res .= "<select id=\"$id\" name=\"$id\" selectzor=\"1\"";
+        if($class != '') $res .= " class=\"$class\"";
+        $res .= ">\n";
         foreach($items as $field => $value) {
             if($field == $selectedItem) {
-                echo "<option value=\"$field\" selected=\"selected\">$value</option>\n";
+                $res .= "<option value=\"$field\" selected=\"selected\">$value</option>\n";
             }
             else {
-                echo "<option value=\"$field\">$value</option>\n";
+                $res .= "<option value=\"$field\">$value</option>\n";
             }
         }
-        echo "</select>\n";
+        $res .= "</select>\n";
+        return $res;
     }
     
     function form_generate_from_yaml($formYaml, $formValues, $fromName, $prefix) {
-        if(formName != '') 
-            form_start($formName);
+        $res = '';
+        if(formName != '')
+            $res .= form_start($formName);
         
-        echo "<table>\n";
+        $res .= "<table>\n";
         
         foreach ( $formYaml as $paramName => $parameter) {
-            echo "  <tr>\n";
-            echo "    <th>\n";
-            echo "$parameter[title]";
-            echo "    </th>\n";
-            echo "    <td>\n";
+            $res .= "  <tr>\n";
+            $res .= "    <th>\n";
+            $res .= "$parameter[title]";
+            $res .= "    </th>\n";
+            $res .= "    <td>\n";
             
             if ( $parameter['type'] == 'text' ) {
                 form_text($prefix . $paramName, $formValues[$paramName], '', 50);
@@ -84,12 +95,13 @@
                 form_select($prefix . $paramName, $parameter['items'], $formValues[$paramName], '');
             }
             
-            echo "    </td>\n";
-            echo "  </tr>\n";
-            echo "</table>\n";
+            $res .= "    </td>\n";
+            $res .= "  </tr>\n";
+            $res .= "</table>\n";
         }
         
         if(formName != '') 
-            form_end();
+            $res .= form_end();
+        return $res;
     }
 ?>

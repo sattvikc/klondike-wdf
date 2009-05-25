@@ -6,12 +6,11 @@
         $menu = yaml_load(WPATH . 'etc' . DS . 'Menu' . DS . $params['menu'] . '.yaml');
         
         foreach($menu['items'] as $item) {
-            if(isset($content)) unset($content);
-            $content = array();
-            $content[ $subregions['url'] ] = url_generate($item['url']);
-            $content[ $subregions['text'] ] = $item['text'];
-            if($item['url'] == $MAIN_URL) $content['class'] = 'active';
-            include WPATH . 'share' . DS . 'themes' . DS . $CUR_THEME . DS . $_CUR_REGION . '.php';
+            content_start();
+            content_echo( $subregions['url'], url_generate($item['url']) );
+            content_echo( $subregions['text'], $item['text'] );
+            if($item['url'] == $MAIN_URL) content_echo( 'class', 'active' );
+            content_end();
         }
     }
 ?>

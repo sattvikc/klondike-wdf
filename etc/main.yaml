@@ -25,3 +25,4 @@ libraries:
   - form
   - dir
   - db
+  - content

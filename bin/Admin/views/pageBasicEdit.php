@@ -5,7 +5,7 @@
         
         if(count($SUB_URL) == 2 && $SUB_URL[1] == 'edit') {
             $pgYaml = yaml_load(WPATH . 'etc' . DS . 'pages' . DS . $SUB_URL[0], true);
-            form_start('basicEdit');
+            echo form_start('basicEdit');
             
             $theme_list = array('default' => 'Default Theme');
             $themes = dir_get_dirs(WPATH . 'share' . DS . 'themes');
@@ -16,28 +16,28 @@
                         <table cellspacing="0" cellpadding="2" class="list">
                             <tr>
                                 <td class="field">Title</td>
-                                <td class="value"><?php form_text($APP_ID . '_title', $pgYaml['title'], 'text', 50); ?></td>
+                                <td class="value"><?php echo form_text($APP_ID . '_title', $pgYaml['title'], 'text', 50); ?></td>
                             </tr>
                             <tr>
                                 <td class="field">Type</td>
-                                <td class="value"><?php form_select($APP_ID . '_type', array('page' => 'Page', 'api' => 'API'), $pgYaml['type'], 'text'); ?></td>
+                                <td class="value"><?php echo form_select($APP_ID . '_type', array('page' => 'Page', 'api' => 'API'), $pgYaml['type'], 'text'); ?></td>
                             </tr>
                             <tr>
                                 <td class="field">Theme</td>
-                                <td class="value"><?php form_select($APP_ID . '_theme', $theme_list, $pgYaml['theme'], 'text'); ?></td>
+                                <td class="value"><?php echo form_select($APP_ID . '_theme', $theme_list, $pgYaml['theme'], 'text'); ?></td>
                             </tr>
                             <tr>
                                 <td class="field">Inherit Start</td>
-                                <td class="value"><?php form_text($APP_ID . '_inheritStart', join(',', $pgYaml['inherit']['start']), 'text', 50); ?></td>
+                                <td class="value"><?php echo form_text($APP_ID . '_inheritStart', join(',', $pgYaml['inherit']['start']), 'text', 50); ?></td>
                             </tr>
                             <tr>
                                 <td class="field">Inherit End</td>
-                                <td class="value"><?php form_text($APP_ID . '_inheritEnd', join(',', $pgYaml['inherit']['end']), 'text', 50); ?></td>
+                                <td class="value"><?php echo form_text($APP_ID . '_inheritEnd', join(',', $pgYaml['inherit']['end']), 'text', 50); ?></td>
                             </tr>
                         </table>
 <?php
-            form_link_button($APP_ID . '_save', 'Save', 'basicEdit','');
-            form_end();
+            echo form_link_button($APP_ID . '_save', 'Save', 'basicEdit','');
+            echo form_end();
         }
     }
 ?>

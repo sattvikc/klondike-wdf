@@ -18,7 +18,11 @@
       <div id="left-col">
         <div id="content">
 <?php region_theme_load("content"); ?>
-          <div class="page-nav fix"> <span class="previous-entries">Previous Entries</span> <span class="next-entries">Next Entries</span></div><!-- page nav -->
+    <ol class="commentlist">
+<?php region_theme_load("comment"); ?>
+    </ol>
+
+          <div class="page-nav fix"></div><!-- page nav -->
         </div>
       </div>
       <div class="dbx-group" id="sidebar">

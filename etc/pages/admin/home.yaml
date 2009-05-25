@@ -14,7 +14,6 @@ regions:
             app: CustomHtml
             view: default
             controller: none
-            allowUser: admin
             parameters:
                 title: Home
                 text: Welcome to Dashboard. Pick an item to manage.
@@ -26,7 +25,6 @@ regions:
             app: Admin
             view: items
             controller: none
-            allowUser: admin
             parameters:
                 items:
                     - title: Basic Settings

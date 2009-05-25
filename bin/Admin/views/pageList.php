@@ -5,7 +5,7 @@
         
         $pages = dir_get_files(WPATH . 'etc' . DS . 'pages');
         sort($pages);
-        form_start('newPage');
+        echo form_start('newPage');
         echo "<table class=\"datatable\">\n";
         foreach($pages as $page) {
             echo "<tr>\n";
@@ -29,16 +29,16 @@
         echo "<tr>\n";
         
         echo '<td>';
-        form_text($APP_ID . '_pageName', 'newpage.yaml', 'text', 50);
+        echo form_text($APP_ID . '_pageName', 'newpage.yaml', 'text', 50);
         echo "</td>\n";
         
         echo '<td colspan="2">';
-        form_link_button($APP_ID . '_page_create', 'Create', 'newPage');
+        echo form_link_button($APP_ID . '_page_create', 'Create', 'newPage');
         echo "</td>\n";
         
         echo "</tr>\n";
         
         echo "</table>\n";
-        form_end();
+        echo form_end();
     }
 ?>

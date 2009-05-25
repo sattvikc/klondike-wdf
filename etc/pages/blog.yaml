@@ -1,0 +1,24 @@
+---
+title: Home
+type: page
+theme: default
+inherit: 
+  start: 
+    - _all_start.yaml
+  end: 
+    - _all_end.yaml
+regions: 
+  content: 
+    Blog1: 
+      app: Blog
+      view: display
+      controller: none
+      parameters: 
+        pageSize: 5
+        blogName: sattvik
+      subregions: 
+        title: title
+        text: text
+        datetime: upperRight
+        author: upperLeft
+        readmore: lower

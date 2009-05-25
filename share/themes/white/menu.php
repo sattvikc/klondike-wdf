@@ -1,1 +1,1 @@
-<li <?php if(isset($content['class'])) echo 'class="' . $content['class'] . '"'; ?>><a href="<?php echo $content['url']; ?>"><?php echo $content['text']; ?></a></li>
+<li <?php if(isset($CONTENT['class'])) echo 'class="' . $CONTENT['class'] . '"'; ?>><a href="<?php echo $CONTENT['url']; ?>"><?php echo $CONTENT['text']; ?></a></li>

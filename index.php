@@ -56,6 +56,8 @@
     $MAIN_URL = join("/", $MAIN_URL);
     
     if($URL_PATH[1] == 'admin') {
+        global $CUR_THEME;
+        $CUR_THEME="white";
         include WPATH . 'sys' . DS . 'admin' . DS . 'index.php';
         die('');
     }
