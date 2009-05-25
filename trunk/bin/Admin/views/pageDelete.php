@@ -5,9 +5,9 @@
         
         $pages = dir_get_files(WPATH . 'etc' . DS . 'pages');
         sort($pages);
-        form_start('deletePage');
+        echo form_start('deletePage');
         form_link_button($APP_ID . '_yes', 'Yes', 'deletePage');
         echo "<a href=\"" . url_generate("admin/pages") . "\">No</a>";
-        form_end();
+        echo form_end();
     }
 ?>

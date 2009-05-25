@@ -22,3 +22,5 @@ regions:
             controller: login
             parameters:
             subregions:
+                text: text
+                title: title

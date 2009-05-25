@@ -5,14 +5,14 @@
         
         if(count($SUB_URL) == 2 && $SUB_URL[1] == 'edit') {
 
-            form_start('fileEdit');
+            echo form_start('fileEdit');
             
             $page = WPATH . 'etc' . DS . 'pages' . DS . $SUB_URL[0];
-            form_textarea($APP_ID . '_file_contents', file_read($page), 'text', 80, 20);
+            echo form_textarea($APP_ID . '_file_contents', file_read($page), 'text', 80, 20);
             echo "<br />\n";
-            form_link_button($APP_ID . '_save', 'Save', 'fileEdit');
+            echo form_link_button($APP_ID . '_save', 'Save', 'fileEdit');
             
-            form_end();
+            echo form_end();
         }
     }
 ?>

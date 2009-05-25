@@ -24,7 +24,7 @@
                 $ERR_MSG = 'Invalid Username or Password!';
                 return;
             }
-            user_create($_POST[$APP_ID . '_username'], $_POST[$APP_ID . '_password2']);
+            user_create($_POST[$APP_ID . '_username'], $_POST[$APP_ID . '_password2'], $_POST[$APP_ID . '_name']);
         }
     }
     

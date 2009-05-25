@@ -2,20 +2,22 @@
 <?php
     function Admin_items_view($params, $subregions) {
         global $_CUR_REGION, $_SETTINGS;
-        echo '                        <div id="items">' . "\n";
+        
+        content_start();
+        content_echo($subregions['title'], '');
+        content_echo($subregions['text'], '<div id="items">' . "\n");
         foreach($params['items'] as $item) {
-?>
-                            <table>
-                                <tr>
-                                    <td rowspan="2" class="icon"><img src="<?php echo WURL; ?>/share/resources/admin/<?php echo $item['icon']; ?>" /></td>
-                                    <td class="itemTitle"><a href="<?php echo url_generate($item['url']);?>"><?php echo $item['title']; ?></a></td>
-                                </tr>
-                                <tr>
-                                    <td class="itemDescription"><?php echo $item['description']; ?></td>
-                                </tr>
-                            </table>
-<?php
+            content_echo($subregions['text'], "<table>\n");
+            content_echo($subregions['text'], "<tr>\n");
+            content_echo($subregions['text'], "<td rowspan=\"2\" class=\"icon\"><img src=\"" . WURL . "/share/resources/admin/$item[icon]\" /></td>\n");
+            content_echo($subregions['text'], "<td class=\"itemTitle\"><a href=\"" . url_generate($item['url']) . "\">$item[title]</a></td>\n");
+            content_echo($subregions['text'], "</tr>\n");
+            content_echo($subregions['text'], "<tr>\n");
+            content_echo($subregions['text'], "<td class=\"itemDescription\">$item[description]</td>\n");
+            content_echo($subregions['text'], "</tr>\n");
+            content_echo($subregions['text'], "</table>\n");
         }
-        echo '                        </div>' . "\n";
+        content_echo($subregions['text'], '</div>' . "\n");
+        content_end();
     }
 ?>

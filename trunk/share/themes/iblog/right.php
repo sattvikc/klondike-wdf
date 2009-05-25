@@ -1,8 +1,8 @@
       <!--sidebox start -->
       <div class="dbx-box">
-        <h3 class="dbx-handle"><?php echo $content['title']; ?></h3>
+        <h3 class="dbx-handle"><?php echo $CONTENT['title']; ?></h3>
         <div class="dbx-content">
-          <?php echo $content['text']; ?>
+          <?php echo $CONTENT['text']; ?>
         </div>
       </div>
       <!--sidebox end -->

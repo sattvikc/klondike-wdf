@@ -6,3 +6,7 @@
  yaml: cache.yaml
 -url: /inheritance
  yaml: inheritance.yaml
+-url: /comments
+ yaml: comments.yaml
+-url: /blog
+ yaml: blog.yaml
