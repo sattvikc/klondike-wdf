@@ -1,0 +1,8 @@
+      <!--sidebox start -->
+      <div class="dbx-box">
+        <h3 class="dbx-handle">{[title]}</h3>
+        <div class="dbx-content">
+          {[text]}
+        </div>
+      </div>
+      <!--sidebox end -->

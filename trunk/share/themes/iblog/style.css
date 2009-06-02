@@ -169,7 +169,7 @@ h6{font-size: 12px;}
 	display: block;
 }
 
-#nav .current_page_item a, #nav .current_page_item a:hover,#nav li a:active{
+#nav .active a, #nav .active a:hover,#nav li a:active{
 	text-decoration: none;	
 	background: #2a2a2a url(images/navgrad-active.png) repeat-x top left;
 	color: #fff;
@@ -200,7 +200,7 @@ h6{font-size: 12px;}
 	text-decoration: none;
 	color: #333333;
 }
-#subnav .current_page_item a, #subnav .current_page_item a:visited {
+#subnav .active a, #subnav .active a:visited {
 	color: #3b9acc;
 }
 #subnav li a:hover {

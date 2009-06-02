@@ -16,7 +16,8 @@ regions:
       parameters: 
         title: p1.yaml
         text: >
-                This page inherits p3.yaml in start section and p4.yaml in end section.
+          This page inherits p3.yaml in start
+          section and p4.yaml in end section.
       subregions: 
         title: title
         text: text

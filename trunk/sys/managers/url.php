@@ -65,6 +65,8 @@
     
     function url_generate($url) {
         global $_SETTINGS;
+        if(strlen($url) > 0 && '/' == $url[0])
+            $url = substr($url, 1);
         if($_SETTINGS['basic']['urltype'] == 'noht') {
             return WURL . 'index.php/' . $url; // Not using htaccess to rename urls.
         }

@@ -16,6 +16,7 @@ regions:
             view: default
             controller: none
             condition: || (count($SUB_URL) == 0)
+            allowGroup: admin
             parameters:
                 title: Pages
                 text: View/Manage pages of your website.
@@ -23,90 +24,105 @@ regions:
                 title: title
                 text: text
             
-        Settings1:
-            app: Admin
-            view: pageList
-            controller: pageList
+        Settings0:
+            app: Pages
+            view: list
+            controller: list
             condition: || (count($SUB_URL) == 0)
+            allowGroup: admin
+            ajaxify: yes
             parameters:
             subregions:
+                title: title
+                text: text
+            
+        Settings1:
+            app: Pages
+            view: mapping
+            controller: mapping
+            condition: || (count($SUB_URL) == 0)
+            allowGroup: admin
+            ajaxify: yes
+            parameters:
+            subregions:
+                title: title
+                text: text
             
         CustomHtml2:
             app: CustomHtml
             view: default
             controller: none
-            condition: || (count($SUB_URL) == 2 && $SUB_URL[1] == 'edit' )
+            condition: || (count($SUB_URL) >= 1)
+            allowGroup: admin
             parameters:
-                title: Basic Settings
-                text: Click save to save the page. Navigate off the page to cancel changes.
+                title: || "Edit page - "
+                text: || $SUB_URL[0]
             subregions:
                 title: title
-                text: text
-                
+                text: title
+            
         Settings2:
-            app: Admin
-            view: pageBasicEdit
-            controller: pageBasicEdit
-            condition: || (count($SUB_URL) == 2 && $SUB_URL[1] == 'edit' )
+            app: Pages
+            view: basicEdit
+            controller: basicEdit
+            condition: || (count($SUB_URL) == 1)
+            allowGroup: admin
+            ajaxify: yes
             parameters:
-            subregions:
-        
-        CustomHtml5:
-            app: CustomHtml
-            view: default
-            controller: none
-            condition: || (count($SUB_URL) == 2 && $SUB_URL[1] == 'edit' )
-            parameters:
-                title: Page Edit
-                text: 
+                page: || $SUB_URL[0]
             subregions:
                 title: title
                 text: text
-                
-        Settings5:
-            app: Admin
-            view: pageFileEdit
-            controller: pageFileEdit
-            condition: || (count($SUB_URL) == 2 && $SUB_URL[1] == 'edit' )
+        
+        Settings3:
+            app: Pages
+            view: inheritanceEdit
+            controller: inheritanceEdit
+            condition: || (count($SUB_URL) == 1)
+            allowGroup: admin
+            ajaxify: yes
             parameters:
+                page: || $SUB_URL[0]
             subregions:
+                title: title
+                text: text
         
         CustomHtml3:
             app: CustomHtml
             view: default
             controller: none
-            condition: || (count($SUB_URL) == 2 && $SUB_URL[1] == 'delete' )
-            parameters:
-                title: Confirm Delete
-                text: Are you sure you want to delete selected page?
-            subregions:
-                title: title
-                text: text
-                
-        Settings3:
-            app: Admin
-            view: pageDelete
-            controller: pageDelete
-            condition: || (count($SUB_URL) == 2 && $SUB_URL[1] == 'delete' )
-            parameters:
-            subregions:
-            
-        CustomHtml4:
-            app: CustomHtml
-            view: default
-            controller: none
             condition: || (count($SUB_URL) == 1)
+            allowGroup: admin
             parameters:
-                title: File Contents
-                text: 
+                title: || "Edit apps"
+                text: || "<a href=\"" . WURL . "index.php/$MAIN_URL/$SUB_URL[0]/edit\">Click here</a>"
             subregions:
                 title: title
                 text: text
         
         Settings4:
-            app: Admin
-            view: pageShowYaml
-            controller: none
-            condition: || (count($SUB_URL) == 1)
+            app: Pages
+            view: appEdit
+            controller: appEdit
+            condition: || (count($SUB_URL) == 2)
+            allowGroup: admin
+            ajaxify: yes
             parameters:
+                page: || $SUB_URL[0]
             subregions:
+                title: title
+                text: text
+        
+        Settings5:
+            app: Pages
+            view: newApp
+            controller: newApp
+            condition: || (count($SUB_URL) == 2)
+            allowGroup: admin
+            ajaxify: yes
+            ajaxReload: Settings4
+            parameters:
+                page: || $SUB_URL[0]
+            subregions:
+                title: title
+                text: text

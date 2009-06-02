@@ -3,3 +3,16 @@ inherit:
         -'none'
     end:
         -'none'
+regions:
+    content:
+        AdminRequired:
+            app: CustomHtml
+            view: default
+            controller: none
+            denyGroup: admin
+            parameters:
+                title: Access Denied
+                text: You don't have permission to access this page.
+            subregions:
+                title: title
+                text: text

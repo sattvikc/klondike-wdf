@@ -1,4 +1,3 @@
----
 title: Home
 type: page
 theme: default
@@ -8,38 +7,35 @@ inherit:
   end: 
     - _all_end.yaml
 regions: 
+  menu: 
   content: 
     CustomHtml2: 
       app: CustomHtml
       view: default
       controller: none
+      condition: false
+      ajaxify: no
+      template: content
       parameters: 
         title: Different theme
-        text: >
-                This page is meant for user comments.
+        text: This page is meant for user comments.
       subregions: 
         title: title
         text: text
-  comment:
-    Comments1:
-        app: Comments
-        view: display
-        controller: none
-        parameters:
-            target: comment1
-            targetType: commentPage
-        subregions:
-            title: author
-            text: text
-            datetime: datetime
-    Comments2:
-        app: Comments
-        view: new
-        controller: new
-        parameters:
-            target: comment1
-            targetType: commentPage
-        subregions:
-            title: author
-            text: text
-            datetime: datetime
+  right: 
+  comment: 
+    Comments1: 
+      app: Comments
+      view: responses
+      controller: none
+      ajaxify: no
+      template: comment
+      parameters: 
+        target: comment1
+        targetType: commentPage
+      subregions: 
+        title: author
+        text: text
+        datetime: datetime
+  bottom: 
+  dummy: 

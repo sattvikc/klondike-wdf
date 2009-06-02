@@ -5,21 +5,12 @@ inherit:
         -'none'
 
 regions:
-    menu:
-        Menu1:
-            app: Menu
-            view: list
-            controller: none
-            parameters:
-                menu: mainmenu
-            subregions:
-                url: url
-                text: text
     left:
         Login1:
             app: User
             view: login
             controller: login
+            template: left
             parameters:
             subregions:
                 text: text

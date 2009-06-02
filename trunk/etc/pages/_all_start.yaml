@@ -4,28 +4,40 @@ type: page
 theme: default
 inherit: 
   start: 
-    - none
+    - 
   end: 
-    - none
+    - 
 regions: 
   menu: 
-    Menu1: 
+    MainMenu: 
       app: Menu
       view: list
       controller: none
+      template: menu
       parameters: 
         menu: mainmenu
       subregions: 
         url: url
         text: text
-  right:
+        class: class
+  content: 
+  right: 
     EverywhereApp: 
       app: CustomHtml
       view: default
       controller: none
+      template: right
       parameters: 
         title: Sidebar Item
-        text: This app is initiated under _all_start.yaml which is inherited by other pages. Since this is under start inheritence, it will appear before the apps of current page.
+        text: >
+          This app is initiated under
+          _all_start.yaml which is inherited by
+          other pages. Since this is under start
+          inheritence, it will appear before the
+          apps of current page.
       subregions: 
         title: title
         text: text
+  comment: 
+  bottom: 
+  dummy: 

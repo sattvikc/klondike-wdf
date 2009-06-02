@@ -1,0 +1,12 @@
+.ui-notifier {
+	padding: 0 .7em;
+}
+
+.ui-notifier span.icon {
+	float: left;
+}
+
+.ui-notifier span.message {
+	font-weight: bold;
+}
+

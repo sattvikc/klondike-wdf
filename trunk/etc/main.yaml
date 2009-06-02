@@ -1,11 +1,10 @@
----
 basic: 
   url: http://localhost/klondike-wdf/
   path: c:\wamp\www\klondike-wdf\
   title: 
-    - Hello
-    - World
-  tagline: Website Development Framework
+    - Klondike
+    - WDF
+  tagline: Web Development Simplified
   urltype: noht
 theme: 
   name: iblog
@@ -16,6 +15,9 @@ database:
   user: root
   pass: 
   prefix: kd_
+email: 
+  method: sendmail
+  path: C:\sendmail\sendmail.exe -t
 libraries: 
   - mysqldb
   - sqlitedb
@@ -26,3 +28,4 @@ libraries:
   - dir
   - db
   - content
+  - email
