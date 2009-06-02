@@ -1,12 +1,21 @@
--url: /home
- yaml: home.yaml
--url: /differenttheme
- yaml: differentTheme.yaml
--url: /cacheing
- yaml: cache.yaml
--url: /inheritance
- yaml: inheritance.yaml
--url: /comments
- yaml: comments.yaml
--url: /blog
- yaml: blog.yaml
+- 
+  url: /home
+  yaml: home.yaml
+- 
+  url: /differenttheme
+  yaml: differentTheme.yaml
+- 
+  url: /caching
+  yaml: cache.yaml
+- 
+  url: /inheritance
+  yaml: inheritance.yaml
+- 
+  url: /comments
+  yaml: comments.yaml
+- 
+  url: /blog
+  yaml: blog.yaml
+- 
+  url: /newurl
+  yaml: .yaml

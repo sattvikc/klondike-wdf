@@ -1,0 +1,10 @@
+        <div class="post">
+          <div class="title">
+          <h2  class="posttitle">{[title]}</h2>
+          <div class="postdata"><span class="category">{[upperLeft]}</span> <span class="comments">{[upperRight]}</span></div>
+          </div>
+          <div class="entry">
+            {[text]}
+          </div><!--entry -->
+          <span class="tags">{[lower]}<br /></span>
+        </div><!--post -->

@@ -8,6 +8,7 @@ inherit:
   end: 
     - _all_end.yaml
 regions: 
+  menu: 
   content: 
     CustomHtml1: 
       app: CustomHtml
@@ -22,3 +23,7 @@ regions:
       subregions: 
         title: title
         text: text
+  right: 
+  comment: 
+  bottom: 
+  dummy: 

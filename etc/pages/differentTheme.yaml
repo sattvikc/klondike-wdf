@@ -1,7 +1,7 @@
 ---
 title: Home
 type: page
-theme: white
+theme: default
 inherit: 
   start: 
     - _all_start.yaml
@@ -16,7 +16,12 @@ regions:
       parameters: 
         title: Different theme
         text: >
-                This page loads up with a different theme because theme parameter of this page is set to use a different theme. Using 'default' will load global theme, whereas, using other value will load corresponding theme.
+          This page loads up with a different
+          theme because theme parameter of this
+          page is set to use a different theme.
+          Using 'default' will load global theme,
+          whereas, using other value will load
+          corresponding theme.
       subregions: 
         title: title
         text: text

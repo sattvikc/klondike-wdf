@@ -1,62 +1,9 @@
 <?php if(!defined('KLONDIKE_VER')) die("Access denied!"); ?>
 <?php
-    function form_start($formName) {
-        return "<form name=\"$formName\" method=\"post\" action=\"$_SERVER[PHP_SELF]\">\n";
-    }
-    
-    function form_end() {
-        return "</form>\n";
-    }
-    
-    function form_button($id, $text, $class='') {
-        return "<input type=\"submit\" id=\"$id\" name=\"$id\" class=\"$class\" value=\"$text\" />\n";
-    }
-
-    function form_link_button($id, $text, $formName, $class='') {
-        $res = '';
-        $res .= "<input type=\"hidden\" id=\"$id\" name=\"$id\" value=\"\" />\n";
-        $res .= "<a href=\"#\" class=\"$class\" onClick=\"$('#$id').attr('value', '$text'); document.$formName.submit();\" >$text</a>\n";
-        return $res;
-    }
-    
-    function form_text($id, $text, $class='', $size='') {
-        $res = '';
-        $res .= "<input type=\"text\"";
-        if($id != '') $res .= " id=\"$id\" name=\"$id\"";
-        if($text != '') $res .= " value=\"$text\"";
-        if($size != '') $res .= " size=\"$size\"";
-        if($class != '') $res .= " class=\"$class\"";
-        $res .= " />\n";
-        return $res;
-    }
-    
-    function form_password($id, $text, $class='', $size='') {
-        $res = '';
-        $res .= "<input type=\"password\"";
-        if($id != '') $res .= " id=\"$id\" name=\"$id\"";
-        if($text != '') $res .= " value=\"$text\"";
-        if($size != '') $res .= " size=\"$size\"";
-        if($class != '') $res .= " class=\"$class\"";
-        $res .= " />\n";
-        return $res;
-    }
-    
-    function form_textarea($id, $text, $class='', $cols='', $rows='') {
-        $res = '';
-        $res .= "<textarea";
-        if($id != '') $res .= " id=\"$id\" name=\"$id\"";
-        if($cols != '') $res .= " size=\"$cols\"";
-        if($rows != '') $res .= " size=\"$rows\"";
-        if($class != '') $res .= " class=\"$class\"";
-        $res .= ">\n";
-        if($text != '') $res .= "$text";
-        $res .= "</textarea>\n";
-        return $res;
-    }
     
     function form_select($id, $items, $selectedItem, $class='') {
         $res = '';
-        $res .= "<select id=\"$id\" name=\"$id\" selectzor=\"1\"";
+        $res .= "<select id=\"$id\" name=\"$id\"";
         if($class != '') $res .= " class=\"$class\"";
         $res .= ">\n";
         foreach($items as $field => $value) {
@@ -68,6 +15,11 @@
             }
         }
         $res .= "</select>\n";
+        $res .= '<script type="text/javascript">' . "\n";
+        $res .= "$('#$id').jcombox({ fx: 'slideFade' }); ;\n";
+        if($confirm)
+            $res .= "$('#link_$id').confirm();" . "\n";
+        $res .= '</script>' . "\n";
         return $res;
     }
     
@@ -103,5 +55,141 @@
         if(formName != '') 
             $res .= form_end();
         return $res;
+    }
+
+    //Sys::includeCSS('jqueryui-contrib');
+    //Sys::includeCSS('ui.button');
+    Sys::includeCSS('jquery.combox');
+    
+    Sys::includeJS('jquery');
+    Sys::includeJS('jquery-ui');
+    //Sys::includeJS('jqueryui-contrib');
+    //Sys::includeJS('ui.contrib.js');
+    //Sys::includeJS('ui.button.js');
+    Sys::includeJS('jquery.onreturn');
+    Sys::includeJS('jquery.combox');
+    Sys::includeJS('jquery.confirm');
+    Sys::includeJS('jquery.jselect');
+    
+    Class Form {
+        private static $_FORM_ID;
+        
+        public static function Start($id, $action=NULL) {
+            Form::$_FORM_ID = $id;
+            if(isset($action) && '' != $action)
+                return "<form id=\"$id\" method=\"post\" action=\"$action\">\n";
+            else
+                return "<form id=\"$id\" method=\"post\" action=\"$_SERVER[PHP_SELF]\">\n";
+        }
+        
+        public static function End() {
+            Form::$_FORM_ID = NULL;
+            return "</form>\n";
+        }
+        
+        public static function Button($id, $value, $class=NULL, $confirm=false, $default=FALSE) {
+            $formName = Form::$_FORM_ID;
+            $res = "<input type=\"hidden\" id=\"$id\" name=\"$id\" value=\"\" />\n";
+            $res .= "<input type=\"button\" id=\"link_$id\" name=\"link_$id\" value=\"$value\"";
+            if(isset($class) && '' != $class)
+                $res .= " class=\"$class\"";
+            else
+                $res .= " class=\"ui-button ui-state-default ui-corner-all\"";
+            $res .= "></input>\n";
+            $res .= '<script type="text/javascript">' . "\n";
+            //$res .= "$('#link_$id').click( );\n";
+            $res .= "$('#link_$id').click(function() { $('#$id').attr('value', '$value'); $(\"#$formName\").submit();} );\n";
+            if(!isset($class))
+                $res .= "$('#link_$id').hover(function(){ $(this).addClass(\"ui-state-hover\"); }, function(){ $(this).removeClass(\"ui-state-hover\"); }).mousedown(function(){ $(this).addClass(\"ui-state-active\"); }).mouseup(function(){ $(this).removeClass(\"ui-state-active\");});\n";
+            if($confirm)
+                $res .= "$('#link_$id').confirm();" . "\n";
+            if($default)
+                $res .= "$('input', $('#$formName')).onReturn( function() { $('#link_$id').click(); } );\n";
+            $res .= '</script>' . "\n";
+            return $res;
+        }
+        
+        public static function LinkButton($id, $value, $class=NULL, $confirm=FALSE, $default=FALSE) {
+            $formName = Form::$_FORM_ID;
+            $res = "<input type=\"hidden\" id=\"$id\" name=\"$id\" value=\"\" />\n";
+            $res .= "<a id=\"link_$id\" href=\"#\" class=\"$class\">$value</a>\n";
+            $res .= '<script type="text/javascript">' . "\n";
+            $res .= "$('#link_$id').click( function() { $('#$id').attr('value', '$value'); $(\"#$formName\").submit();} );\n";
+            if($confirm)
+                $res .= "$('#link_$id').confirm();" . "\n";
+            if($default)
+                $res .= "$('input', $('#$formName')).onReturn( function() { $('#link_$id').click(); } );\n";
+            $res .= '</script>' . "\n";
+            return $res;
+        }
+        
+        public static function Text($id, $value='', $class=NULL, $size=NULL) {
+            $formName = Form::$_FORM_ID;
+            $res = "<input type=\"text\"";
+            if(isset($id) && $id != '') $res .= " id=\"$id\" name=\"$id\"";
+            if(isset($value) && $value != '') $res .= " value=\"$value\"";
+            if(isset($size) && $size != '') $res .= " size=\"$size\"";
+            if(isset($class) && $class != '') 
+                $res .= " class=\"$class\"";
+            else
+                $res .= " class=\"ui-widget ui-widget-content ui-corner-all\"";
+            $res .= "></input>\n";
+            return $res;
+        }
+        
+        public static function Password($id, $value='', $class=NULL, $size=NULL) {
+            $res = "<input type=\"password\"";
+            if(isset($id) && $id != '') $res .= " id=\"$id\" name=\"$id\"";
+            if(isset($value) && $value != '') $res .= " value=\"$value\"";
+            if(isset($size) && $size != '') $res .= " size=\"$size\"";
+            if(isset($class) && $class != '') 
+                $res .= " class=\"$class\"";
+            else
+                $res .= " class=\"ui-widget ui-widget-content ui-corner-all\"";
+            $res .= "></input>\n";
+            return $res;
+        }
+        
+        public static function TextArea($id, $value='', $class=NULL, $cols=NULL, $rows=NULL) {
+            $res = "<textarea";
+            $res .= " id=\"$id\" name=\"$id\"";
+            if(isset($cols)) $res .= " cols=\"$cols\"";
+            if(isset($rows)) $res .= " rows=\"$rows\"";
+            if(isset($class) && $class != '') 
+                $res .= " class=\"$class\"";
+            else {
+                $res .= " class=\"ui-widget ui-widget-content ui-corner-all\"";
+                $res .= " style=\"font-family: Consolas, 'Courier New', mono\"";
+            }
+            $res .= " wrap=\"off\">\n";
+            $res .= "$value";
+            $res .= "</textarea>\n";
+            return $res;
+        }
+        
+        public static function Select($id, $value, $class=NULL, $items) {
+            $res = "<select id=\"$id\" name=\"$id\"";
+            if(isset($class) && $class != '') 
+                $res .= " class=\"$class\"";
+            else
+                $res .= " class=\"ui-button ui-state-default ui-corner-all\"";
+            $res .= ">\n";
+            foreach($items as $field => $val) {
+                if($field == $value) {
+                    $res .= "<option value=\"$field\" selected=\"selected\">$val</option>\n";
+                }
+                else {
+                    $res .= "<option value=\"$field\">$val</option>\n";
+                }
+            }
+            $res .= "</select>\n";
+            
+            /*$res .= '<script type="text/javascript">' . "\n";
+            //$res .= "$('#$id').jcombox({ fx: 'slideFade' }); ;\n";
+            if(!isset($class))
+                $res .= "$('#$id').hover(function(){ $(this).addClass(\"ui-state-hover\"); }, function(){ $(this).removeClass(\"ui-state-hover\")});\n";
+            $res .= '</script>' . "\n";*/
+            return $res;
+        }
     }
 ?>

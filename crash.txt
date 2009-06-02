@@ -1,0 +1,257 @@
+date/time         : 2009-05-29, 19:37:29, 156ms
+computer name     : SATTVIK-LAPTOP
+user name         : SYSTEM <admin>
+registered owner  : Sattvik Chakravarthy
+operating system  : Windows XP Service Pack 3 build 2600
+system language   : English
+system up time    : 1 hour 38 minutes
+program up time   : 59 milliseconds
+processor         : AMD Turion(tm) 64
+physical memory   : 762/1407 MB (free/total)
+free disk space   : (C:) 237.89 MB
+display mode      : 1280x800, 32 bit
+process id        : $cc4
+allocated memory  : 3.45 MB
+command line      : C:\sendmail\sendmail.exe -t
+executable        : sendmail.exe
+exec. date/time   : 2009-04-02 08:43
+compiled with     : Delphi 2006/07
+madExcept version : 3.0h
+callstack crc     : $64e5e396, $64e5e396, $64e5e396
+exception number  : 1
+exception class   : Exception
+exception message : Message is missing recipient's address.
+
+main thread ($3b4):
+004a5495 +a41 sendmail.exe sendmail 637 +177 initialization
+
+modules:
+00400000 sendmail.exe                C:\sendmail
+58d40000 Wship6.dll   5.1.2600.5512  C:\WINDOWS\system32
+5d090000 comctl32.dll 5.82.2900.5512 C:\WINDOWS\system32
+71a50000 mswsock.dll  5.1.2600.5625  C:\WINDOWS\System32
+71aa0000 WS2HELP.dll  5.1.2600.5512  C:\WINDOWS\system32
+71ab0000 WS2_32.dll   5.1.2600.5512  C:\WINDOWS\system32
+71ad0000 wsock32.dll  5.1.2600.5512  C:\WINDOWS\system32
+76390000 IMM32.DLL    5.1.2600.5512  C:\WINDOWS\system32
+763b0000 comdlg32.dll 6.0.2900.5512  C:\WINDOWS\system32
+76f20000 DNSAPI.dll   5.1.2600.5625  C:\WINDOWS\system32
+76f60000 WLDAP32.dll  5.1.2600.5512  C:\WINDOWS\system32
+76fb0000 winrnr.dll   5.1.2600.5512  C:\WINDOWS\System32
+77120000 oleaut32.dll 5.1.2600.5512  C:\WINDOWS\system32
+773d0000 comctl32.dll 6.0.2900.5512  C:\WINDOWS\WinSxS\x86_Microsoft.Windows.Common-Controls_6595b64144ccf1df_6.0.2600.5512_x-ww_35d4ce83
+774e0000 ole32.dll    5.1.2600.5512  C:\WINDOWS\system32
+77c00000 version.dll  5.1.2600.5512  C:\WINDOWS\system32
+77c10000 msvcrt.dll   7.0.2600.5512  C:\WINDOWS\system32
+77dd0000 ADVAPI32.dll 5.1.2600.5755  C:\WINDOWS\system32
+77e70000 RPCRT4.dll   5.1.2600.5512  C:\WINDOWS\system32
+77f10000 GDI32.dll    5.1.2600.5698  C:\WINDOWS\system32
+77f60000 SHLWAPI.dll  6.0.2900.5512  C:\WINDOWS\system32
+77fe0000 Secur32.dll  5.1.2600.5753  C:\WINDOWS\system32
+7c800000 kernel32.dll 5.1.2600.5781  C:\WINDOWS\system32
+7c900000 ntdll.dll    5.1.2600.5755  C:\WINDOWS\system32
+7c9c0000 shell32.dll  6.0.2900.5622  C:\WINDOWS\system32
+7e410000 USER32.dll   5.1.2600.5512  C:\WINDOWS\system32
+
+processes:
+000 Idle
+004 System           normal
+4d4 smss.exe         normal       C:\WINDOWS\system32
+544 csrss.exe        normal       C:\WINDOWS\system32
+55c winlogon.exe     high         C:\WINDOWS\system32
+588 services.exe     normal       C:\WINDOWS\system32
+594 lsass.exe        normal       C:\WINDOWS\system32
+634 svchost.exe      normal       C:\WINDOWS\system32
+66c svchost.exe      normal       C:\WINDOWS\system32
+714 svchost.exe      normal       C:\WINDOWS\System32
+74c svchost.exe      normal       C:\WINDOWS\system32
+110 svchost.exe      normal       C:\WINDOWS\system32
+26c aswUpdSv.exe     normal       D:\Program Files\Alwil Software\Avast4
+2a4 ashServ.exe      high         D:\Program Files\Alwil Software\Avast4
+45c spoolsv.exe      normal       C:\WINDOWS\system32
+138 svchost.exe      normal       C:\WINDOWS\system32
+194 jqs.exe          idle         C:\Program Files\Java\jre6\bin
+1c0 nvsvc32.exe      normal       C:\WINDOWS\system32
+7b4 ashMaiSv.exe     normal       D:\Program Files\Alwil Software\Avast4
+6b8 ashWebSv.exe     normal       D:\Program Files\Alwil Software\Avast4
+6d8 alg.exe          normal       C:\WINDOWS\System32
+a58 Explorer.EXE     normal       C:\WINDOWS
+b3c wscntfy.exe      normal       C:\WINDOWS\system32
+b48 TSVNCache.exe    normal       D:\Program Files\TortoiseSVN\bin
+c64 ashDisp.exe      normal       D:\PROGRA~1\ALWILS~1\Avast4
+d54 jusched.exe      normal       C:\Program Files\Java\jre6\bin
+d7c cledx.exe        normal       C:\Program Files\SyncroSoft\Pos\H2O
+d84 SynTPEnh.exe     above normal C:\Program Files\Synaptics\SynTP
+dcc fdm.exe          normal       D:\Program Files\Free Download Manager
+ddc GoogleUpdate.exe normal       C:\Documents and Settings\Sattvik Chakravarthy\Local Settings\Application Data\Google\Update
+de4 ctfmon.exe       normal       C:\WINDOWS\system32
+920 googletalk.exe   normal       C:\Program Files\Google\Google Talk
+d90 firefox.exe      normal       D:\Program Files\Mozilla Firefox
+52c wampmanager.exe  normal       C:\wamp
+7c8 httpd.exe        normal       c:\wamp\bin\apache\apache2.2.11\bin
+f04 httpd.exe        normal       C:\wamp\bin\apache\apache2.2.11\bin
+7e0 mysqld.exe       normal       c:\wamp\bin\mysql\mysql5.1.32\bin
+464 pn.exe           normal       D:\Program Files\Programmer's Notepad
+6d0 cmd.exe          normal       C:\WINDOWS\system32
+cc4 sendmail.exe     normal       C:\sendmail
+
+hardware:
++ Batteries
+  - Microsoft AC Adapter
+  - Microsoft ACPI-Compliant Control Method Battery
++ Computer
+  - ACPI Uniprocessor PC
++ Disk drives
+  - FUJITSU MHW2080BH PL
++ Display adapters
+  - NVIDIA GeForce Go 6150 (driver 8.6.2.2)
++ DVD/CD-ROM drives
+  - LODY RST6309 SCSI CdRom Device
+  - MATSHITA DVD-RAM UJ-850S
++ Human Interface Devices
+  - USB Human Interface Device (driver 6.0.6000.0)
++ IDE ATA/ATAPI controllers
+  - NVIDIA nForce 430/410 Serial ATA Controller (driver 5.10.2600.650)
+  - Primary IDE Channel
+  - Secondary IDE Channel
+  - Standard Dual Channel PCI IDE Controller
++ IEEE 1394 Bus host controllers
+  - OHCI Compliant IEEE 1394 Host Controller
++ Keyboards
+  - Standard 101/102-Key or Microsoft Natural PS/2 Keyboard
++ Mice and other pointing devices
+  - HID-compliant mouse
+  - Synaptics PS/2 Port TouchPad (driver 11.0.7.0)
++ Modems
+  - HDAUDIO Soft Data Fax Modem with SmartCP (driver 7.70.0.0)
++ Monitors
+  - Default Monitor
+  - Default Monitor
+  - Plug and Play Monitor
++ Network adapters
+  - 1394 Net Adapter
+  - Broadcom 802.11a/b/g WLAN (driver 5.10.38.26)
+  - NVIDIA nForce Networking Controller (driver 50.2.4.0)
+  - VirtualBox Host-Only Ethernet Adapter (driver 2.2.2.0)
++ NVIDIA Network Bus Enumerator
+  - NVIDIA Network Bus Enumerator (driver 50.2.4.0)
++ Processors
+  - AMD Turion(tm) 64  (driver 1.0.0.0)
++ SCSI and RAID controllers
+  - AB5H377B IDE Controller
++ Secure Digital host controllers
+  - SDA Standard Compliant SD Host Controller
++ Sound, video and game controllers
+  - Audio Codecs
+  - Conexant High Definition Audio (driver 3.30.0.0)
+  - Legacy Audio Drivers
+  - Legacy Video Capture Devices
+  - Media Control Devices
+  - Video Codecs
++ System devices
+  - ACPI Fixed Feature Button
+  - ACPI Lid
+  - ACPI Power Button
+  - ACPI Sleep Button
+  - ACPI Thermal Zone
+  - ACPI Thermal Zone
+  - Direct memory access controller
+  - Extended IO Bus
+  - High precision event timer
+  - ISAPNP Read Data Port
+  - Logical Disk Manager
+  - Microcode Update Device
+  - Microsoft ACPI-Compliant Embedded Controller
+  - Microsoft ACPI-Compliant System
+  - Microsoft Composite Battery
+  - Microsoft System Management BIOS Driver
+  - Microsoft UAA Bus Driver for High Definition Audio
+  - Microsoft Windows Management Interface for ACPI
+  - Motherboard resources
+  - Motherboard resources
+  - Motherboard resources
+  - nForce HyperTransport Bridge (driver 5.1.2600.450)
+  - nForce Memory Controller (driver 5.1.2600.450)
+  - nForce Memory Controller (driver 5.1.2600.450)
+  - nForce Memory Controller (driver 5.1.2600.450)
+  - nForce Memory Controller (driver 5.1.2600.450)
+  - nForce Memory Controller (driver 5.1.2600.450)
+  - nForce Memory Controller (driver 5.1.2600.450)
+  - nForce Memory Controller (driver 5.1.2600.450)
+  - nForce Memory Controller (driver 5.1.2600.450)
+  - Numeric data processor
+  - NVIDIA nForce PCI System Management (driver 4.5.0.0)
+  - NVIDIA nForce System Management Controller (driver 5.1.2600.114)
+  - PCI bus
+  - PCI standard host CPU bridge
+  - PCI standard host CPU bridge
+  - PCI standard host CPU bridge
+  - PCI standard host CPU bridge
+  - PCI standard ISA bridge
+  - PCI standard PCI-to-PCI bridge
+  - PCI standard PCI-to-PCI bridge
+  - PCI standard PCI-to-PCI bridge
+  - Plug and Play Software Device Enumerator
+  - Programmable interrupt controller
+  - Syncro TruEmu Team H2O (driver 0.3.141.666)
+  - Syncro TruEmu Team H2O (driver 0.3.141.666)
+  - System CMOS/real time clock
+  - System speaker
+  - System timer
+  - Terminal Server Device Redirector
+  - Terminal Server Keyboard Driver
+  - Terminal Server Mouse Driver
+  - Volume Manager
++ Universal Serial Bus controllers
+  - Standard Enhanced PCI to USB Host Controller
+  - Standard OpenHCD USB Host Controller
+  - USB Root Hub
+  - USB Root Hub
+
+cpu registers:
+eax = 00895340
+ebx = 0041c138
+ecx = 00895340
+edx = 004a549a
+esi = 01c9e061
+edi = d83833c2
+eip = 004a549a
+esp = 0012fe30
+ebp = 0012ffc0
+
+stack dump:
+0012fe30  9a 54 4a 00 de fa ed 0e - 01 00 00 00 07 00 00 00  .TJ.............
+0012fe40  44 fe 12 00 9a 54 4a 00 - 40 53 89 00 38 c1 41 00  D....TJ.@S..8.A.
+0012fe50  61 e0 c9 01 c2 33 38 d8 - c0 ff 12 00 60 fe 12 00  a....38.....`...
+0012fe60  6c fe 12 00 58 4b 40 00 - c0 ff 12 00 78 fe 12 00  l...XK@.....x...
+0012fe70  ef 4c 40 00 c0 ff 12 00 - b4 ff 12 00 58 4b 40 00  .L@.........XK@.
+0012fe80  c0 ff 12 00 c2 33 38 d8 - 61 e0 c9 01 00 70 fd 7f  .....38.a....p..
+0012fe90  00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00  ................
+0012fea0  00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00  ................
+0012feb0  00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00  ................
+0012fec0  00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00  ................
+0012fed0  00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00  ................
+0012fee0  00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00  ................
+0012fef0  00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00  ................
+0012ff00  00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00  ................
+0012ff10  00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00  ................
+0012ff20  00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00  ................
+0012ff30  00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00  ................
+0012ff40  00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00  ................
+0012ff50  00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00  ................
+0012ff60  00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00  ................
+
+disassembling:
+[...]
+004a5482       jnz     loc_4a549a
+004a5484 637   mov     ecx, $4a63c0           ; 'Message is missing recipient's address'
+004a5489       mov     dl, 1
+004a548b       mov     eax, [$4084f0]
+004a5490       call    -$97be9 ($40d8ac)      ; SysUtils.Exception.Create
+004a5495     > call    -$a081e ($404c7c)      ; System.@RaiseExcept
+004a549a 639   cmp     dword ptr [$4b3c80], 0
+004a54a1       jz      loc_4a54d4
+004a54a3 641   xor     ecx, ecx
+004a54a5       mov     dl, 1
+004a54a7       mov     eax, [$4a2614]
+[...]

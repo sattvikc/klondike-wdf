@@ -14,6 +14,7 @@ regions:
             app: CustomHtml
             view: default
             controller: none
+            allowGroup: admin
             parameters:
                 title: Server Information
                 text: >
@@ -23,8 +24,9 @@ regions:
                 text: text
             
         Settings1:
-            app: Admin
-            view: serverConfig
+            app: ServerInfo
+            view: info
             controller: none
+            allowGroup: admin
             parameters:
             subregions:

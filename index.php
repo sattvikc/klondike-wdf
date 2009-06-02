@@ -13,18 +13,25 @@
     
     //Include YAML parser and load main settings using YAML parser.
     require_once('sys' . DS . 'parsers' . DS . 'yaml.php');
-
+    
     global $_SETTINGS;
     $_SETTINGS = yaml_load('etc/main.yaml');
     
+    //Load system definitions
+    require_once('sys' . DS . 'defs' . DS . 'app.php');
+    require_once('sys' . DS . 'defs' . DS . 'content.php');
+    require_once('sys' . DS . 'defs' . DS . 'template.php');
+    
     //Load the loaders
-    require_once('sys/loaders/theme.php');
-    require_once('sys/loaders/region.php');
-    require_once('sys/loaders/app.php');
+    require_once('sys' . DS . 'loaders' . DS . 'page.php');
+    require_once('sys' . DS . 'loaders' . DS . 'theme.php');
+    require_once('sys' . DS . 'loaders' . DS . 'region.php');
+    require_once('sys' . DS . 'loaders' . DS . 'app.php');
     
     //Load the managers
-    require_once('sys/managers/url.php');
-    require_once('sys/managers/user.php');
+    require_once('sys' . DS . 'managers' . DS . 'url.php');
+    require_once('sys' . DS . 'managers' . DS . 'user.php');
+    require_once('sys' . DS . 'managers' . DS . 'group.php');
     
     //More shorthands, for coder's comfort.. :)
     define('WURL', $_SETTINGS['basic']['url']);
@@ -51,30 +58,25 @@
     
     global $MAIN_URL, $SUB_URL;
     
-    $SUB_URL = array_slice($URL_PATH, $level);
+    $SUB_URL = array_slice($URL_PATH, $level); // Unmatched part of URL
     $MAIN_URL = array_slice($URL_PATH, 1, $level-1);
-    $MAIN_URL = join("/", $MAIN_URL);
+    $MAIN_URL = join("/", $MAIN_URL); // Matched part of URL
+    
+    if(isset($_GET['script'])) {
+        include WPATH . 'var' . DS . 'scripts' . DS . $_GET['script'] . '.php';
+        die('');
+    }
+    if(isset($_POST['script'])) {
+        include WPATH . 'var' . DS . 'scripts' . DS . $_POST['script'] . '.php';
+        die('');
+    }
+    
+    Page::Load();
     
     if($URL_PATH[1] == 'admin') {
         global $CUR_THEME;
-        $CUR_THEME="white";
-        include WPATH . 'sys' . DS . 'admin' . DS . 'index.php';
-        die('');
+        $CUR_THEME="admin";
     }
+    Theme::PreLoad();
+    Theme::Load();
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-    <head>
-<?php theme_load_head(); ?>
-    </head>
-    <body>
-<?php theme_load_body(); ?>
-<?php
-    //Measure Execution time
-    $time_end = microtime(true);
-    $time = $time_end - $time_start;
-    // print time taken for checking performance
-    echo "<pre>Page took $time seconds\n</pre>"; //*/
-?>
-    </body>
-</html>

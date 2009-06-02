@@ -1,4 +1,3 @@
----
 title: Design
 type: page
 theme: default
@@ -10,38 +9,53 @@ inherit:
     - _all_end.yaml
     - p2.yaml
 regions: 
+  menu: 
   content: 
     Inherit1: 
       app: CustomHtml
       view: default
       controller: none
+      ajaxify: no
       parameters: 
         title: Inheritance.yaml
         text: >
-                This page inherits p1.yaml in start section and p2.yaml in end section.
+          This page inherits p1.yaml in start
+          section and p2.yaml in end section.
       subregions: 
         title: title
         text: text
-  right:
-    Information1:
+  right: 
+    Information1: 
       app: CustomHtml
       view: default
       controller: none
-      parameters:
+      ajaxify: no
+      template: right
+      parameters: 
         title: Information
         text: >
-                  This page demonstrates the use of inheritance of pages. Current page inherits p1 and p2 whereas, both p1 and p2 inherits p3 and p4.
+          This page demonstrates the use of
+          inheritance of pages. Current page
+          inherits p1 and p2 whereas, both p1 and
+          p2 inherits p3 and p4.
       subregions: 
         title: title
         text: text
-    Information2:
+    Information2: 
       app: CustomHtml
       view: default
       controller: none
-      parameters:
+      ajaxify: no
+      template: right
+      parameters: 
         title: APP_ID clashes
         text: >
-                  User must be careful when inheriting a page more than once. It may result in APP_ID clash. It will not cause any problem while loading, but, may result in execution of controller multiple times.
+          User must be careful when inheriting a
+          page more than once. It may result in
+          APP_ID clash.
       subregions: 
         title: title
         text: text
+  comment: 
+  bottom: 
+  dummy: 

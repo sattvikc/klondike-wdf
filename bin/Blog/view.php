@@ -30,6 +30,7 @@
             content_echo($subregions['readmore'], '<a href="' . url_generate($MAIN_URL . '/post/' . $blogPost['Id']) . '">Read More</a>');
             content_end();
         }
+    
     }
     
 ?>

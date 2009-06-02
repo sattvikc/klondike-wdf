@@ -1,0 +1,22 @@
+title: Home
+type: page
+theme: default
+
+inherit:
+    start:
+        -'_all_start.yaml'
+    end:
+        -'_all_end.yaml'
+
+regions:
+    content:
+        Settings1:
+            app: Settings
+            view: basic
+            controller: basic
+            allowGroup: admin
+            ajaxify: yes
+            parameters:
+            subregions:
+                title: title
+                text: text

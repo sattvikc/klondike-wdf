@@ -1,9 +1,11 @@
 items:
  -url: home
   text: Home
- -url: cacheing
-  text: Cacheing
+ -url: caching
+  text: Caching
  -url: inheritance
   text: Inheritance
  -url: differenttheme
   text: Theme
+ -url: blog
+  text: Blog

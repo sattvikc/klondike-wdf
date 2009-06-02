@@ -8,6 +8,7 @@ inherit:
   end: 
     - _all_end.yaml
 regions: 
+  menu: 
   content: 
     Blog1: 
       app: Blog
@@ -22,3 +23,7 @@ regions:
         datetime: upperRight
         author: upperLeft
         readmore: lower
+  right: 
+  comment: 
+  bottom: 
+  dummy: 

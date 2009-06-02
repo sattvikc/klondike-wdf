@@ -1,8 +1,8 @@
 -url: /admin
  yaml: home.yaml
  title: Admin Home
--url: /admin/basic
- yaml: basic.yaml
+-url: /admin/settings
+ yaml: settings.yaml
  title: Admin Home
 -url: /admin/pages
  yaml: pages.yaml
@@ -12,3 +12,5 @@
  yaml: packages.yaml
 -url: /admin/users
  yaml: users.yaml
+-url: /admin/groups
+ yaml: groups.yaml

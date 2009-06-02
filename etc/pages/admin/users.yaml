@@ -15,9 +15,23 @@ regions:
             view: default
             controller: none
             condition: || (count($SUB_URL) == 0)
+            allowGroup: admin
             parameters:
                 title: User Management
                 text: 
+            subregions:
+                title: title
+                text: text
+        UserList1:
+            app: User
+            view: list
+            controller: deleteUser
+            condition: || (count($SUB_URL) == 0)
+            allowGroup: admin
+            ajaxify: true
+            parameters:
+                title: Users
+                text: Pick a task.
             subregions:
                 title: title
                 text: text
@@ -26,50 +40,9 @@ regions:
             view: createUser
             controller: createUser
             condition: || (count($SUB_URL) == 0)
-            parameters:
-                title: Users
-                text: Pick a task.
-            subregions:
-                title: title
-                text: text
-        CustomHtml2:
-            app: CustomHtml
-            view: default
-            controller: none
-            condition: || (count($SUB_URL) == 0)
-            parameters:
-                title: User List
-                text: 
-            subregions:
-                title: title
-                text: text
-        UserList1:
-            app: User
-            view: userList
-            controller: none
-            condition: || (count($SUB_URL) == 0)
-            parameters:
-                title: Users
-                text: Pick a task.
-            subregions:
-                title: title
-                text: text
-        CustomHtml3:
-            app: CustomHtml
-            view: default
-            controller: none
-            condition: || (count($SUB_URL) == 2)
-            parameters:
-                title: Confirm Delete
-                text: Are you sure you want to delete selected user?
-            subregions:
-                title: title
-                text: text
-        UserList2:
-            app: User
-            view: userDelete
-            controller: userDelete
-            condition: || (count($SUB_URL) == 2)
+            allowGroup: admin
+            ajaxify: true
+            ajaxReload: UserList1
             parameters:
                 title: Users
                 text: Pick a task.

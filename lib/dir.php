@@ -3,17 +3,12 @@
         $dhandle = opendir($path);
         $files = array();
 
-        if ($dhandle)
-        {
-            while (false !== ($fname = readdir($dhandle)))
-            {
-                if (($fname != '.') && ($fname != '..') )
-                {
-                    if(!is_dir( "$path" . DS. "$fname" ))
-                    {
+        if ($dhandle) {
+            while (false !== ($fname = readdir($dhandle))) {
+                if ( $fname[0] != '.' ) {
+                    if(!is_dir( "$path" . DS. "$fname" )) {
                         $files[]= $fname;
                     }
-                
                 }
             }
         }
@@ -25,14 +20,10 @@
         $dhandle = opendir($path);
         $files = array();
 
-        if ($dhandle)
-        {
-            while (false !== ($fname = readdir($dhandle)))
-            {
-                if (($fname != '.') && ($fname != '..') )
-                {
-                    if(is_dir( "$path" . DS. "$fname" ))
-                    {
+        if ($dhandle) {
+            while (false !== ($fname = readdir($dhandle))) {
+                if ( $fname[0] != '.' ) {
+                    if(is_dir( "$path" . DS. "$fname" )) {
                         $files[]= $fname;
                     }
                 }

@@ -1,4 +1,3 @@
----
 title: Home
 type: page
 theme: default
@@ -8,6 +7,7 @@ inherit:
   end: 
     - _all_end.yaml
 regions: 
+  menu: 
   content: 
     CustomHtml2: 
       app: CustomHtml
@@ -16,30 +16,20 @@ regions:
       cache: no
       parameters: 
         title: Code
-        text: >
-                  <pre>
-                  app: PrimeGenerate<br />
-                  view: default<br />
-                  controller: none<br />
-                  cache: yes<br />
-                  parameters: <br />
-                  &nbsp;&nbsp;title: Home Page<br />
-                  &nbsp;&nbsp;text: My Content<br />
-                  subregions: <br />
-                  &nbsp;&nbsp;title: title<br />
-                  &nbsp;&nbsp;text: text<br />
-                  </pre>  
+        text: |
+          <pre> app: PrimeGenerate<br /> view: default<br /> controller: none<br /> cache: yes<br /> parameters: <br /> &nbsp;&nbsp;title: Home Page<br /> &nbsp;&nbsp;text: My Content<br /> subregions: <br /> &nbsp;&nbsp;title: title<br /> &nbsp;&nbsp;text: text<br /> </pre>
       subregions: 
         title: title
         text: text
-    Prime1: 
-      app: PrimeGenerate
-      view: default
+  right: 
+  comment: 
+  bottom: 
+  dummy: 
+    test: 
+      app: CustomHtml
+      view: none
       controller: none
-      cache: yes
+      ajaxify: no
+      template: content
       parameters: 
-        title: Home Page
-        text: My Content
       subregions: 
-        title: title
-        text: text

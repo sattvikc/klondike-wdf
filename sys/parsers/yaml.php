@@ -27,13 +27,16 @@
                 $code = $yaml;
                 $code = str_replace('||', '', $code);
                 $code = "\$retVal = $code;";
+                set_error_handler("myErrorHandler");
                 eval($code);
+                restore_error_handler();
                 $yaml = $retVal;
-                //$yaml = 1;
             }
         }
     }
-
+    
+    function myErrorHandler($errno, $errstr, $errfile, $errline) {} // Suppress the error
+    
     class Spyc {
       private $_haveRefs;
       private $_allNodes;
@@ -87,11 +90,13 @@
         }
 
         // New YAML document
-        $string = "---\n";
+        $string = "";//"---\n";
 
         // Start at the base of the array and move through it.
-        foreach ($array as $key => $value) {
-          $string .= $this->_yamlize($key,$value,0);
+        if(is_array($array)) {
+            foreach ($array as $key => $value) {
+              $string .= $this->_yamlize($key,$value,0);
+            }
         }
         return $string;
       }
@@ -327,10 +332,10 @@
           if ($intvalue != PHP_INT_MAX)
             $value = $intvalue;
         } elseif (in_array(strtolower($value),
-        array('true', 'on', '+', 'yes', 'y'))) {
+        array('true', 'on', '+'))) {
           $value = true;
         } elseif (in_array(strtolower($value),
-        array('false', 'off', '-', 'no', 'n'))) {
+        array('false', 'off', '-'))) {
           $value = false;
         } elseif (is_numeric($value)) {
           if ($value === '0') return 0;
