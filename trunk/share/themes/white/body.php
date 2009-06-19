@@ -6,20 +6,21 @@
                 </div>
                 <div id="nav">
                     <ul>
-<?php region_theme_load('menu'); ?>
+<?php Region::Load('menu'); ?>
                     </ul>
                 </div>
             </div>
             <table cellspacing="0" cellpadding="0" id="main"><tr>
                 <td id="col1" class="col">
-<?php region_theme_load("left"); ?>
+<?php Region::Load("left"); ?>
                 </td>
                 <td id="col2" class="col">
-<?php region_theme_load("content"); ?>
+<?php Region::Load("content"); ?>
+<?php Region::Load("comment"); ?>
                 </td>
                 <td id="col3" class="col">
                     <div class="right_wrap">
-<?php region_theme_load("right"); ?>
+<?php Region::Load("right"); ?>
                     </div>
                 </td>
             </tr></table>

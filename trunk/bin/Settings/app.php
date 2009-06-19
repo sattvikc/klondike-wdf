@@ -53,6 +53,15 @@
                 $_SETTINGS['basic']['tagline'] = $_POST[$APP_ID . '_tagline'];
                 $_SETTINGS['basic']['urltype'] = $_POST[$APP_ID . '_urltype'];
                 
+                if( 'ht' == $_SETTINGS['basic']['urltype'] ) {
+                    if( !file_exists(WPATH . '.htaccess') ) 
+                        rename( WPATH . 'htaccess.txt', WPATH . '.htaccess');
+                }
+                else {
+                    if( file_exists(WPATH . '.htaccess') ) 
+                        rename( WPATH . '.htaccess', WPATH . 'htaccess.txt');
+                }
+                
                 file_write(WPATH . 'etc' . DS . 'main.yaml', Spyc::YAMLDump($_SETTINGS));
                 $this->info = "Settings saved successfully!";
             }

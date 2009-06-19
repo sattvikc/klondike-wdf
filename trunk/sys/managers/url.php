@@ -68,7 +68,10 @@
         if(strlen($url) > 0 && '/' == $url[0])
             $url = substr($url, 1);
         if($_SETTINGS['basic']['urltype'] == 'noht') {
-            return WURL . 'index.php/' . $url; // Not using htaccess to rename urls.
+            return WURL . 'index.php/' . $url; // Not using htaccess to rewrite urls.
+        }
+        else if($_SETTINGS['basic']['urltype'] == 'ht') {
+            return WURL . $url; // Using htaccess to rewrite urls.
         }
     }
 ?>

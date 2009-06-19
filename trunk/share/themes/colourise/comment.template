@@ -1,0 +1,8 @@
+        <li>
+            {[author:<cite>:</cite>]} {[extra]}
+            {[message:<em>:</em>]}
+            <br />
+            {[lower:<small>:</small>]}
+            <br />
+            {[text]}
+        </li>

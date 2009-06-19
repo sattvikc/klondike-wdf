@@ -91,11 +91,15 @@ p {
 }
 
 #col1 {
-    max-width: 350px;
+    max-width: 250px;
+}
+
+#col2 {
+    max-width: 500px;
 }
 
 #col3 {
-    max-width: 350px;
+    max-width: 250px;
 }
 
 .col {
@@ -148,6 +152,30 @@ p {
     font-weight: normal;
 }
 
+.content_post h3 {
+    font-size: 1.2em;
+    color: #137ADA;
+    margin: 0px;
+    margin-bottom: 10px;
+    font-weight: normal;
+}
+
+.content_post h4 {
+    font-size: 1.0em;
+    color: #137ADA;
+    margin: 0px;
+    margin-bottom: 10px;
+    font-weight: normal;
+}
+
+.content_post h5 {
+    font-size: 0.8em;
+    color: #137ADA;
+    margin: 0px;
+    margin-bottom: 10px;
+    font-weight: normal;
+}
+
 .content_post h2 a {
     color: #137ADA;
     text-decoration: none;
@@ -159,6 +187,29 @@ p {
     font-weight: normal;
 }
 
+.content_post .upper {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.content_post .uleft {
+    display: inline;
+    float: left;
+    font-size: 90%;
+}
+
+.content_post .uright {
+    display: inline;
+    float: right;
+    font-size: 90%;
+}
+
+.content_post .post {
+    display: block;
+    clear: both;
+    padding-top: 5px;
+}
+
 .content_post p{
     margin-bottom: 15px;
 }
@@ -166,6 +217,10 @@ p {
 .content_post ul,li {
     margin-left: 30px;
     margin-bottom: 10px;
+}
+
+.content_post small {
+    font-size: 80%;
 }
 
 /* right sidebar template */
@@ -180,10 +235,8 @@ p {
     padding-bottom: 15px;
     font: inherit;
     margin-bottom: 20px;
-
     background: url('images/rightbottom.jpg') no-repeat 50% 100%;
     margin-bottom: 20px;
-    width: 250px;
 }
 
 .right_post h3 {

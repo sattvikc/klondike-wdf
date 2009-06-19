@@ -1,7 +1,6 @@
----
 title: Home
 type: page
-theme: default
+theme: iblog
 inherit: 
   start: 
     - _all_start.yaml

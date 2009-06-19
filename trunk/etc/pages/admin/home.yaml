@@ -45,8 +45,8 @@ regions:
                       description: Manage groups of the system.
                       icon: groups.png
                       url: admin/groups
-                    - title: Server Information
-                      description: View server information and recommended settings.
+                    - title: Server
+                      description: View server configuration.
                       icon: server.png
                       url: admin/server-info
             subregions:

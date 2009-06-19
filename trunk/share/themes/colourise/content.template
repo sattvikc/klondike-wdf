@@ -1,0 +1,4 @@
+            {[title:<h2>:</h2>]}
+            <p class="post-info">{[upperLeft]} {[upperRight]}</p>
+            {[text]}
+            {[lower:<p class="postmeta">:</p>]}
