@@ -1,0 +1,14 @@
+RewriteEngine on
+RewriteRule ^home([/]?.*) index.php/home$1
+RewriteRule ^differenttheme([/]?.*) index.php/differenttheme$1
+RewriteRule ^caching([/]?.*) index.php/caching$1
+RewriteRule ^inheritance([/]?.*) index.php/inheritance$1
+RewriteRule ^comments([/]?.*) index.php/comments$1
+RewriteRule ^blog([/]?.*) index.php/blog$1
+RewriteRule ^admin([/]?.*) index.php/admin$1
+RewriteRule ^admin/settings([/]?.*) index.php/admin/settings$1
+RewriteRule ^admin/pages([/]?.*) index.php/admin/pages$1
+RewriteRule ^admin/server-info([/]?.*) index.php/admin/server-info$1
+RewriteRule ^admin/packages([/]?.*) index.php/admin/packages$1
+RewriteRule ^admin/users([/]?.*) index.php/admin/users$1
+RewriteRule ^admin/groups([/]?.*) index.php/admin/groups$1

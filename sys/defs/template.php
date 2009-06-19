@@ -18,13 +18,13 @@
         // This function is used to conviniently generate HTML that match the template
         public static function RenderTemplate($fileName, $content) { 
             $subject = file_read($fileName); // Reads the template file
-            $pattern = '/\{\[([a-zA-Z0-9_]*)\]\}/'; // Regular Expression to match the template variables in the format {[varname]}
+            $pattern = '/\{\[([a-zA-Z0-9_]*)([:][^:\]]+)?([:][^:\]]+)?\]\}/'; // Regular Expression to match the template variables in the format {[varname]}
             preg_match_all($pattern, $subject, $matches); // Execute the regular expression to find the variables
             
             // Replace variables from $content array on template Variables
             for($i=0; $i<count($matches[0]); $i++) {
                 if( isset ($content[$matches[1][$i]] ) ) {
-                    $subject = str_replace($matches[0][$i], $content[$matches[1][$i]], $subject);
+                    $subject = str_replace($matches[0][$i], substr($matches[2][$i], 1) . $content[$matches[1][$i]] . substr($matches[3][$i], 1), $subject);
                 }
                 else {
                     $subject = str_replace($matches[0][$i], '', $subject);
@@ -32,6 +32,10 @@
             }
             
             return $subject;
+        }
+        
+        public static function RecursiveRenderTemplate($template, $content) {
+            
         }
     }
 ?>

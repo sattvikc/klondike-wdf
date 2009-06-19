@@ -1,0 +1,6 @@
+<div class="right_post">
+    <h3>{[title]}</h3>
+    <div>
+        {[text]}
+    </div>
+</div>

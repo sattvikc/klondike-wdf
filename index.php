@@ -79,4 +79,10 @@
     }
     Theme::PreLoad();
     Theme::Load();
+    
+    //Measure Execution time
+    $time_end = microtime(true);
+    $time = $time_end - $time_start;
+    /* print time taken for checking performance
+    echo "<pre>Page took $time seconds\n</pre>"; //*/
 ?>

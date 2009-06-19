@@ -1,4 +1,3 @@
----
 title: Starting Inherit
 type: page
 theme: default
@@ -22,6 +21,19 @@ regions:
         class: class
   content: 
   right: 
+    Login1: 
+      app: User
+      view: login
+      controller: login
+      ajaxify: no
+      template: right
+      parameters: 
+        title: Login
+      subregions: 
+        title: title
+        text: text
+  comment: 
+  user1: 
     EverywhereApp: 
       app: CustomHtml
       view: default
@@ -38,6 +50,6 @@ regions:
       subregions: 
         title: title
         text: text
-  comment: 
-  bottom: 
+  user2: 
+  user3: 
   dummy: 

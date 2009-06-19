@@ -7,7 +7,7 @@ basic:
   tagline: Web Development Simplified
   urltype: noht
 theme: 
-  name: iblog
+  name: colourise
 database: 
   db: mysql
   name: klondike
@@ -21,11 +21,11 @@ email:
 libraries: 
   - mysqldb
   - sqlitedb
+  - db
   - cache
   - file
   - state
   - form
   - dir
-  - db
   - content
   - email

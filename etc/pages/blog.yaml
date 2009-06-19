@@ -1,4 +1,3 @@
----
 title: Home
 type: page
 theme: default
@@ -12,18 +11,54 @@ regions:
   content: 
     Blog1: 
       app: Blog
-      view: display
+      view: Posts
       controller: none
+      ajaxify: no
+      template: content
       parameters: 
         pageSize: 5
         blogName: sattvik
+        dateFormat: %A, %B %e, %Y
       subregions: 
         title: title
         text: text
-        datetime: upperRight
-        author: upperLeft
+        datetime: upperLeft
+        author: upperRight
         readmore: lower
+    CommentsHeading: 
+      app: CustomHtml
+      view: default
+      controller: none
+      condition: >
+        || count($SUB_URL) > 0 && 'post' ==
+        $SUB_URL[0]
+      ajaxify: no
+      template: content
+      parameters: 
+        title: Comments
+        text: 
+      subregions: 
+        title: title
+        text: text
   right: 
   comment: 
-  bottom: 
+    UserComments: 
+      app: Comments
+      view: Responses
+      controller: none
+      condition: >
+        || count($SUB_URL) > 0 && 'post' ==
+        $SUB_URL[0]
+      ajaxify: no
+      template: comment
+      parameters: 
+        targetType: blog
+        target: || $SUB_URL[1]
+      subregions: 
+        title: author
+        text: text
+        datetime: lower
+  user1: 
+  user2: 
+  user3: 
   dummy: 

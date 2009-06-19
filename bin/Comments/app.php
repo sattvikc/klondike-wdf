@@ -4,16 +4,14 @@
     class Comments extends App {
         
         //views
-        public function responses_view() {
+        public function Responses_view() {
             $params = $this->_APP['parameters'];
             global $_SETTINGS;
-            
-            $this->_CONTENT->Create();
-            $this->_CONTENT->CEcho('title', $params['title']);
             
             $comments = $this->getAll();
             
             if( count($comments) == 0) {
+                $this->_CONTENT->Create();
                 $this->_CONTENT->CEcho('text', "No comments to display!");
                 return;
             }
@@ -27,10 +25,18 @@
                     $this->_CONTENT->CEcho('title', $comment['name']);
                 }
                 $this->_CONTENT->CEcho('datetime', $comment['commentedOn']);
-                $this->_CONTENT->CEcho('text', $comment['comment']);
+                $this->_CONTENT->CEcho('text', stripslashes($comment['commentText']));
             }
         }
         
+        //Models
+        public function getAll() {
+            $params = $this->_APP['parameters'];
+            global $_SETTINGS;
+            $target = $params['target'];
+            $targetType = $params['targetType'];
+            return Database::Select('*', "comments", "target='$target' AND targetType='$targetType'");
+        }
     }
     
 ?>

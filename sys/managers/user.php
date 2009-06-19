@@ -13,20 +13,20 @@
             $name = addslashes($name);
             $email = addslashes($email);
             
-            $query=MySQLdb::Select('*', 'users', "username='$username'");
+            $query=Database::Select('*', 'users', "username='$username'");
             if(count($query) > 0)
                 return FALSE;
             $time = md5(time());
             $password = $time.$password;
             $enc_pass = $time . ":" . md5($password);
-            return MySQLdb::Insert('users', "username,password,name,email,createdOn", array("'$username'", "'$enc_pass'", "'$name'", "'$email'", "NOW()"));
+            return Database::Insert('users', "username,password,name,email,createdOn", array("'$username'", "'$enc_pass'", "'$name'", "'$email'", "NOW()"));
         }
         
         public static function Login($username, $password) {
             $username = addslashes($username);
             $password = addslashes($password);
             
-            $query=MySQLdb::Select("*", "users", "username='$username'");
+            $query=Database::Select("*", "users", "username='$username'");
             
             if(count($query) == 0)
                 return FALSE;
@@ -39,7 +39,7 @@
             if($password != $check[1])
                 return FALSE;
             $ip = $_SERVER['REMOTE_ADDR'];
-            MySQLdb::Update("users", "lastLoggedInOn=NOW(), lastLoginIP='$ip'", "username='$username'");
+            Database::Update("users", "lastLoggedInOn=NOW(), lastLoginIP='$ip'", "username='$username'");
             $_SESSION['auth'] = TRUE;
             $_SESSION['auth_user'] = $username;
             Users::$AUTH = TRUE;
@@ -56,12 +56,12 @@
         }
         
         public static function ListAll() {
-            return MySQLdb::Select("username", "users");
+            return Database::Select("username", "users");
         }
         
         public static function Delete($username) {
             $username = addslashes($username);
-            return MySQLdb::Delete('users', "username='$username'");
+            return Database::Delete('users', "username='$username'");
         }
         
         public static function ChangePassword($username, $oldPassword, $newPassword) {
@@ -69,7 +69,7 @@
             $oldPassword = addslashes($oldPassword);
             $newPassword = addslashes($newPassword);
             
-            $query=MySQLdb::Select("*", "users", "username='$username'");
+            $query=Database::Select("*", "users", "username='$username'");
             
             if(count($query) == 0)
                 return FALSE;
@@ -84,7 +84,7 @@
                 $newPassword = $time . $newPassword;
                 $enc_pass = $time . ":" . md5($newPassword);
                 
-                MySQLdb::Update('users', "password='$enc_pass'", "username='$username'");
+                Database::Update('users', "password='$enc_pass'", "username='$username'");
                 return TRUE;
             }
             return FALSE;

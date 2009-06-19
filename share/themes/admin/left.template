@@ -1,7 +1,7 @@
       <!--sidebox start -->
-      <div class="dbx-box">
-        <h3 class="dbx-handle">{[title]}</h3>
-        <div class="dbx-content">
+      <div>
+        <h1>{[title]}</h1>
+        <div>
           {[text]}
         </div>
       </div>

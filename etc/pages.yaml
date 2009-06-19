@@ -16,6 +16,3 @@
 - 
   url: /blog
   yaml: blog.yaml
-- 
-  url: /newurl
-  yaml: .yaml
